@@ -1,0 +1,587 @@
+/* ————— GLOBAL ————— */
+
+/*Root document variables*/
+
+:root{
+  --link-alpha:20,50%,95%,20%;
+  --bar-width:120px;
+}
+
+/*Linking Whyte Inktrap*/
+
+@font-face {
+    font-family: "WhyteInktrap";
+    src: url("fonts/WhyteInktrap-Book.woff2") format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "WhyteInktrap";
+    src: url("fonts/WhyteInktrap-Light.woff2") format('woff2');
+    font-weight: normal;
+}
+
+/*Text Styles*/
+
+h1{
+  font-family:"WhyteInktrap", sans-serif;
+  font-weight:bold;
+  font-size:4.75rem;
+  letter-spacing: -.3rem;
+  line-height: 4rem;
+  text-align:left;
+  transition:font-size .3s, letter-spacing .3s, line-height .3s, opacity .5s;
+  display:flex;
+  opacity:0;
+  position:sticky;
+  top:20px;
+}
+
+p {
+  font-family: neue-haas-unica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#545454;
+  font-size:1rem;
+  text-align:left;
+  line-height: 1.5rem;
+}
+
+footer{
+  font-size:.75rem;
+  font-family:sans-serif;
+  letter-spacing:0;
+  text-align:right;
+  position:sticky;
+  right:30px;
+  bottom:18px;
+  opacity:1;
+  transition:opacity .3s;
+/*  visibility: hidden;*/
+}
+
+a{
+  color:unset;
+  text-decoration:none;
+  border:none;
+  outline:none;
+  box-shadow:none;
+}
+
+a:visited{
+  color:unset;
+  stroke:unset;
+}
+
+/*Global Page Styles*/
+
+html{
+  font-size:16px;
+  box-sizing: border-box;
+  width:100vw;
+  transform: translateZ(0);
+  height:100%;
+}
+
+.main{
+  transition:padding .2s;
+  box-sizing: border-box;
+  padding:20px;
+/*  height:100%;*/
+  width:100%;
+  display:inline-block;
+}
+
+/*Bridger Logo*/
+
+.bridgerlogo{
+  display:inline-block;
+  float:right;
+  width:86px;
+  right:30px;
+  top:20px;
+  opacity:1;
+  position:sticky;
+  transition:opacity .3s;
+}
+
+.bridgerlogoletters{
+  fill:var(--logo-letter-color);
+  stroke:none;
+}
+
+.bridgerlogobar{
+  fill:hsl(15, 100%, 55%);
+  stroke:none;
+}
+
+/*Bridger Bar*/
+
+.bar{
+  position:sticky;
+  top:20px;
+
+  background: hsl(15, 100%, 55%);
+  width:var(--bar-width);
+  height:calc(100vh - 40px);
+  float:left;
+  display:inline-block;
+  border-radius:4px;
+  border:none;
+  outline:none;
+  box-shadow:none;
+  margin:auto;
+  box-sizing: border-box;
+  transition: width .25s, background-color .5s;
+}
+
+.bar:hover{
+  cursor:pointer;
+  --bar-width:125px;
+  background: hsl(15, 100%, 48%);
+}
+
+/*Inner bar icon control*/
+
+.bariconcontainer{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+
+  height:calc(100vh - 40px); 
+  width:var(--bar-width);
+  box-sizing: border-box;
+  z-index: 1;
+  position:absolute;
+  top:0;
+
+  transition: width .25s;
+  transition-delay: width .8s;
+}
+
+.baricon{
+  stroke:#1A1A1A;
+  fill:none;
+  transition:opacity .5s;
+}
+
+#pageright{
+  display:flex;
+  padding-left:20px;
+  flex-direction:column;
+}
+
+.arrowgrouplink{
+  opacity:0;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: hsla(20,50%,95%,0%);
+  cursor:pointer;
+/*  flex:auto;*/
+  
+
+  transition:width .3s, padding .3s, margin .5s, background-color .3s, opacity 1s;
+}
+
+.arrowgrouplink:hover{
+  margin-left:5px;
+  background-color: hsla(var(--link-alpha));
+}
+
+.linkclassparent{
+  display: flex;
+  align-items: center;
+}
+
+.linktext{
+  text-align:left;
+  padding-left:10px;
+
+
+  font-family:"WhyteInktrap", sans-serif;
+  font-weight:100;
+  font-size:2.3rem;
+  line-height: 2.2rem;
+  letter-spacing: -.1rem;
+  font-weight: 200;
+  transition:font-size .3s, letter-spacing .3s, line-height .3s;  
+}
+
+
+/* ————— LANDING PAGE ————— */
+
+
+/*Landing page themes*/
+
+.theme1{
+  color:#1A1A1A;
+  background-color:hsla(45,100%,54%,100%);
+  stroke:#1A1A1A;
+  --circle-color:hsl(45,100%,54%);
+  --circle-text-color:#FFF;
+  --logo-letter-color:#1A1A1A;
+}
+
+.theme2{
+  color:#FFF;
+  fill:#FFF;
+  background-color:hsl(0, 0%, 10%);
+  stroke:#FFF;
+  --circle-color:hsl(0, 0%, 10%);
+  --circle-text-color:#1A1A1A;
+  --logo-letter-color:#FFF;
+}
+
+.theme3{
+  color:#1A1A1A;
+  stroke:#1A1A1A;
+  background-color:hsl(197, 100%, 53%);
+  --circle-color:hsl(197, 100%, 53%);
+  --circle-text-color:#1A1A1A;
+  --logo-letter-color:#1A1A1A;
+} 
+
+.theme4{
+  color:#1A1A1A;
+  stroke:#1A1A1A;
+  background-color:hsl(45,100%,98%);
+  --circle-color:hsl(45,100%,98%);
+  --circle-text-color:#1A1A1A;
+  --link-alpha:15, 10%, 55%, 10%;
+  --logo-letter-color:#1A1A1A;
+}
+
+/*Landing Page Styles*/
+
+#landing{
+  transition: background-color .6s, color .5s, stroke .5s, fill .5s;
+  --mobile-hide:1;
+  overflow: hidden;
+}
+
+#landingfooter{
+  position:absolute;
+}
+
+#landinglogo{
+  position:absolute;
+}
+
+.arrowcontainer{
+  position:absolute;
+  bottom:18px;
+  list-style: none;
+  transition:bottom .3s;
+
+  width:auto;
+  margin:auto;
+}
+
+/*Bar Video*/
+
+
+.bar video{
+  min-height: 100%;
+}
+
+.bariconarrow{
+  opacity:0;
+  transition:opacity .5s;
+}
+
+/*Only the landing page video bar needs a specific focus state*/
+
+#videobar{
+  overflow: hidden;
+}
+
+#videobar:focus{
+  width:60%;
+  box-sizing: border-box;
+}
+
+#reel{
+  height:100%;
+  margin:auto;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position:relative;
+  opacity:0;
+  transition:visibility .5s, opacity .5s;
+}
+
+/*Color control circle*/
+
+.circle{
+  background-color:var(--circle-color);
+  width:60px;
+  height:120px;
+  float:right;
+  margin:auto;
+  right:0px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  position:absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: opacity .5s;
+}
+
+#innercircle{
+  z-index: -1;
+  transition: width .4s, height .4s;
+}
+
+#controlcircle{
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  right:0px;
+  transition: width .35s, height .35s, background-color .5s, right .5s;
+}
+
+#circlehitbox{
+  width:100px;
+  height:200px;
+  float:right;
+  margin:auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  right:0px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  position:absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: width .3s, height .3s, opacity .3s;
+  cursor: pointer;
+  opacity:1;
+}
+
+/*.circletext {
+  text-align:center;
+  font-family:"WhyteInktrap", sans-serif;
+  font-weight:100;
+  font-size:1.875rem;
+  line-height: 2rem;
+  letter-spacing: -.1rem;
+  font-weight: 200;
+  color:var(--circle-text-color);
+  opacity:0%;
+  transition: opacity .3s, color 1s;
+  cursor:pointer;
+  visibility:hidden;
+}*/
+
+.arrow{
+  fill:none;
+}
+
+.barx{
+  fill:none;
+  visibility: hidden;
+  stroke:hsla(0,100%,100%,40%);
+  opacity:0;
+  width:85px;
+  background-color:none;
+  transition:opacity .3s, stroke .3s;
+  position:absolute;
+  right:30px;
+  top:35px;
+  z-index: 1;
+}
+
+.barx:hover{
+/*  width:50px;*/
+  stroke:hsla(0,100%,100%,100%);
+  cursor:pointer;
+}
+
+.bararrowleft{
+  fill:none;
+  opacity:0;
+  width:85px;
+  background-color:none;
+  transition: opacity 2s,background-color .5s, margin-left .5s;
+  position:absolute;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:10px;
+  border-radius: 20px;
+  margin-left:10px; 
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.bararrowleft:hover{
+  margin-left:0px;
+  cursor:pointer;
+  background-color: hsla(20,50%,95%,20%);
+}
+
+
+/* ————— WORKS PAGE ————— */
+
+#masonrylist{
+  padding-top:60px;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+/*  max-height:1070px;*/
+  justify-content: space-between;
+}
+
+.spacer{
+  flex:auto;
+  background-color: #000;
+  height:80px;
+  min-width:20%;
+  max-width:320px;
+  opacity: 0;
+}
+
+.coverimage{
+  width:300px;
+  height:300px;
+  border-radius: 10px;
+  margin-bottom:10px;
+  background-color:hsl(197, 100%, 53%);
+}
+
+
+@media only screen and (max-width: 900px) {
+  /* For mobile phones: */
+
+.main{
+  padding:20px;
+}
+
+h1{
+  font-size:4rem;
+  letter-spacing: -.25rem;
+  line-height: 3.3rem;
+  opacity: var(--mobile-hide);
+}
+
+.arrowgrouplink{
+  opacity: var(--mobile-hide);
+}
+
+.linktext{
+/*  font-size:2.25rem;*/
+  font-size:2rem;
+  line-height:30px;
+/*  padding-top:12px;*/
+}
+
+.bar{
+  --bar-width:96px;
+}
+
+.bar:hover{
+  cursor:pointer;
+  --bar-width:105px;
+}
+
+#videobar:focus{
+  width:100%;
+}
+
+.bararrowleft{
+  visibility:hidden;
+}
+
+.barx{
+  visibility:visible;
+}
+
+.pageright{
+  padding-left:20px;
+}
+
+footer{
+  opacity:0;
+}
+
+.arrowcontainer{
+  bottom:14px;
+}
+
+.arrowgroup{
+ width:190px;
+}
+
+
+.bridgerlogo{
+  opacity:0;
+}
+
+}
+
+@media only screen and (max-height: 500px) {
+/* For landscape mobile phones */
+
+h1{
+  font-size:4rem;
+  letter-spacing: -.25rem;
+  line-height: 3.3rem;
+  opacity: var(--mobile-hide);
+}
+
+a:hover{
+  margin-left:-5px;
+}
+
+#video:focus{
+  --bar-width:100%;
+}
+
+footer{
+  opacity:0;
+}
+
+.arrowgrouplink{
+  opacity: var(--mobile-hide);
+}
+
+.arrowcontainer{
+  position:absolute;
+  float:right;
+  right:20px;
+}
+
+}
+
+@media only screen and (max-width: 400px) {
+  /* For small mobile phones: */
+
+h1{
+  font-size:3.6rem;
+  letter-spacing: -.25rem;
+  line-height: 3rem;
+  opacity: var(--mobile-hide);
+}
+
+.bar{
+  --bar-width:85px;
+}
+
+.arrowgrouplink{
+  opacity: var(--mobile-hide);
+}
+
+.pageright{
+  padding-left:10px;
+}
+
+
