@@ -205,17 +205,6 @@ a:visited{
   stroke:unset;
 }
 
-footer{
-  font-size:.75rem;
-}
-
-.landingfooter{
-  text-align:right;
-  position:fixed;
-  right:30px;
-  bottom:2vh;
-}
-
 .arrowgroup{
   float:left;
   margin:0;
@@ -271,10 +260,6 @@ h2{
   padding-top: 1px;
 }
 
-.landingfooter{
-  visibility: hidden;
-}
-
 .arrowgroup{
  width:160px;
 }
@@ -301,10 +286,6 @@ a:hover{
 
 .bar:focus{
   width:40%;
-}
-
-.landingfooter{
-  visibility: hidden;
 }
 
 .links-container{

@@ -1,7 +1,8 @@
 /*  Root document variables SORT THESE { */
 
 :root{
-  --link-alpha:20,50%,95%,20%;
+  --link-alpha:20,50%,95%,0%;
+  --link-hover-alpha:20,50%,95%,20%;
   --bar-width:120px;
 }
 
@@ -49,7 +50,7 @@ footer{
   font-family:sans-serif;
   letter-spacing:0;
   text-align:right;
-  position:sticky;
+  position:fixed;
   right:30px;
   bottom:18px;
   opacity:1;
@@ -68,7 +69,7 @@ a:visited{
   color:unset;
   stroke:unset;
 }
-/* end thisSection } */
+/* end root styles } */
 
 /*  Global Page Styles  {*/
 
@@ -133,7 +134,7 @@ body {
   border:none;
   outline:none;
   box-shadow:none;
-  margin:auto;
+  margin-right:20px;
   box-sizing: border-box;
   transition: width .25s, background-color .5s;
 }
@@ -172,39 +173,35 @@ body {
 /* end bar icon control } */
 
 /* SORT THESE STYLES { */
-#pageright{
+#content-area{
   display:flex;
-  padding-left:20px;
+  margin-left:20px;
   flex-direction:column;
 }
 
-.arrowgrouplink{
-  opacity:0;
+.button{
   border-radius: 20px;
   padding: 10px;
-  background-color: hsla(20,50%,95%,0%);
   cursor:pointer;
-  /*   flex:auto; */
-
-
-  transition:width .3s, padding .3s, margin .5s, background-color .3s, opacity 1s;
-}
-
-.arrowgrouplink:hover{
+  display: flex;
+  align-items: center;
   margin-left:5px;
   background-color: hsla(var(--link-alpha));
+/**/
+  transition:width .3s, padding .3s, margin .5s, background-color .3s, opacity 1s;
 }
-
-.linkclassparent{
-  display: flex;
+.button:hover {
+  background-color: hsla(var(--link-hover-alpha));
+  transition: background-color .3s;
+}
+.project > .button {
+  /* justify-content: center; */
   align-items: center;
 }
 
 .linktext{
   text-align:left;
   padding-left:10px;
-
-
   font-family:"WhyteInktrap", sans-serif;
   font-weight:100;
   font-size:2.3rem;
@@ -254,7 +251,8 @@ body {
   background-color:hsl(45,100%,98%);
   --circle-color:hsl(45,100%,98%);
   --circle-text-color:#1A1A1A;
-  --link-alpha:15, 10%, 55%, 10%;
+  --link-alpha:15, 10%, 55%, 0%;
+  --link-hover-alpha:15, 10%, 55%, 10%;
   --logo-letter-color:#1A1A1A;
 }
 
@@ -264,10 +262,6 @@ body {
   transition: background-color .6s, color .5s, stroke .5s, fill .5s;
   --mobile-hide:1;
   overflow: hidden;
-}
-
-#landingfooter{
-  position:absolute;
 }
 
 #landinglogo{
@@ -440,13 +434,9 @@ visibility:hidden;
 
 /*  ————— WORKS PAGE —————  {*/
 
-#masonrylist{
-  padding-top:60px;
-  display: flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-  /*   max-height:1070px; */
-  justify-content: space-between;
+#project-list{
+  margin-top:60px;
+  display: grid;
 }
 
 .spacer{
@@ -482,7 +472,7 @@ visibility:hidden;
     opacity: var(--mobile-hide);
   }
 
-  .arrowgrouplink{
+  .button{
     opacity: var(--mobile-hide);
   }
 
@@ -514,7 +504,7 @@ visibility:hidden;
     visibility:visible;
   }
 
-  .pageright{
+  .content-area{
     padding-left:20px;
   }
 
@@ -555,11 +545,7 @@ visibility:hidden;
     --bar-width:100%;
   }
 
-  footer{
-    opacity:0;
-  }
-
-  .arrowgrouplink{
+  .button{
     opacity: var(--mobile-hide);
   }
 
@@ -585,11 +571,11 @@ visibility:hidden;
     --bar-width:85px;
   }
 
-  .arrowgrouplink{
+  .button{
     opacity: var(--mobile-hide);
   }
 
-  .pageright{
+  .content-area{
     padding-left:10px;
   }
 }
