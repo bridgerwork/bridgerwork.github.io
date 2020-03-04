@@ -217,40 +217,36 @@ body {
 
 /* Landing page themes */
 
-.theme1{
+.theme0{
   color:#1A1A1A;
   background-color:hsla(45,100%,54%,100%);
   stroke:#1A1A1A;
   --circle-color:hsl(45,100%,54%);
-  --circle-text-color:#FFF;
   --logo-letter-color:#1A1A1A;
 }
 
-.theme2{
+.theme1{
   color:#FFF;
   fill:#FFF;
   background-color:hsl(0, 0%, 10%);
   stroke:#FFF;
   --circle-color:hsl(0, 0%, 10%);
-  --circle-text-color:#1A1A1A;
   --logo-letter-color:#FFF;
 }
 
-.theme3{
+.theme2{
   color:#1A1A1A;
   stroke:#1A1A1A;
   background-color:hsl(197, 100%, 53%);
   --circle-color:hsl(197, 100%, 53%);
-  --circle-text-color:#1A1A1A;
   --logo-letter-color:#1A1A1A;
 } 
 
-.theme4{
+.theme3{
   color:#1A1A1A;
   stroke:#1A1A1A;
   background-color:hsl(45,100%,98%);
   --circle-color:hsl(45,100%,98%);
-  --circle-text-color:#1A1A1A;
   --link-alpha:15, 10%, 55%, 0%;
   --link-hover-alpha:15, 10%, 55%, 10%;
   --logo-letter-color:#1A1A1A;
@@ -260,22 +256,22 @@ body {
 
 #landing{
   transition: background-color .6s, color .5s, stroke .5s, fill .5s;
-  --mobile-hide:1;
   overflow: hidden;
+  --mobile-hide:1;
 }
 
 #landinglogo{
   position:absolute;
 }
 
-.arrowcontainer{
+.button-group{
   position:absolute;
   bottom:18px;
   list-style: none;
-  transition:bottom .3s;
-
-  width:auto;
-  margin:auto;
+  transition:opacity .3s, bottom .3s;
+  opacity: 0;
+  /* width:auto; */
+  /* margin:auto; */
 }
 /* end landing page } */
 
@@ -368,21 +364,6 @@ body {
   cursor: pointer;
   opacity:1;
 }
-
-/*.circletext {
-text-align:center;
-font-family:"WhyteInktrap", sans-serif;
-font-weight:100;
-font-size:1.875rem;
-line-height: 2rem;
-letter-spacing: -.1rem;
-font-weight: 200;
-color:var(--circle-text-color);
-opacity:0%;
-transition: opacity .3s, color 1s;
-cursor:pointer;
-visibility:hidden;
-}*/
 
 .arrow{
   fill:none;
@@ -512,7 +493,7 @@ visibility:hidden;
     opacity:0;
   }
 
-  .arrowcontainer{
+  .button-group{
     bottom:14px;
   }
 
@@ -549,7 +530,7 @@ visibility:hidden;
     opacity: var(--mobile-hide);
   }
 
-  .arrowcontainer{
+  .button-group{
     position:absolute;
     float:right;
     right:20px;
