@@ -21,18 +21,28 @@
 }
 
 /*  Text Styles  */
-
-h1{
+h1, h2 {
   font-family:"WhyteInktrap", sans-serif;
   font-weight:bold;
+  text-align:left;
+}
+
+h1{
   font-size:4.75rem;
   letter-spacing: -.3rem;
   line-height: 4rem;
-  text-align:left;
   transition:font-size .3s, letter-spacing .3s, line-height .3s, opacity .5s;
   opacity:0;
   position:sticky;
   top:20px;
+}
+
+h2 {
+  font-size: 2.4rem;
+  letter-spacing: -.15rem;
+  line-height: 2.4rem;
+  padding-top: 56px;
+  margin-bottom: 12px;
 }
 
 p {
@@ -91,8 +101,6 @@ body {
   /* display:inline-block; */
 }
 
-.main {
-}
 /* end global styles } */
 
 /* Bridger Logo { */
@@ -196,10 +204,15 @@ body {
 }
 .project > .button {
   /* justify-content: center; */
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
+}
+.button > .button {
+  background: none;
+  margin: 0;
 }
 
-.linktext{
+.button-label{
   text-align:left;
   padding-left:10px;
   font-family:"WhyteInktrap", sans-serif;
@@ -411,22 +424,14 @@ body {
   cursor:pointer;
   background-color: hsla(20,50%,95%,20%);
 }
-/* end colo control circle } */
+/* end color control circle } */
 
 /*  ————— WORKS PAGE —————  {*/
 
 #project-list{
   margin-top:60px;
   display: grid;
-}
-
-.spacer{
-  flex:auto;
-  background-color: #000;
-  height:80px;
-  min-width:20%;
-  max-width:320px;
-  opacity: 0;
+  list-style: none;
 }
 
 .coverimage{
@@ -437,6 +442,72 @@ body {
   background-color:hsl(197, 100%, 53%);
 }
 /* end works page } */
+
+
+/*  ————— INFO PAGE —————  {*/
+#info-page article{
+  float: left;
+  width:70vw;
+  margin:30px 20px;
+  margin-bottom:2vh;
+}
+
+#info-page p, ul, ol{
+  float: left;
+  display:inline-block;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 30px; 
+  margin-right:5%;
+}
+
+#info-page ul {
+  /* width:100%; */
+  min-width:244px;
+}
+
+#info-page li{
+  float:left;
+  display:block;
+  max-width:480px;
+  min-width:244px;
+  margin-right:2%;
+  margin-bottom:20px;
+}
+
+#services-list li{
+  width:31%;
+}
+
+#team-list li{
+  display:block;
+  height:240px;
+  width:48%;
+  padding-bottom:40px;
+}
+
+.team-name{
+  display:block;
+  width:100%;
+  height:40px;
+  padding:10px 0;
+}
+
+#info-page img{
+  border:none;
+  border-image:none;
+  border-image-width:0;
+}
+
+.team-photo{
+  background-color:hsl(147,87%,96%);
+  height:100%;
+  width:100%;
+
+}
+
+
+/* end info page } */
 
 /* ------- media queries ---------- { */
 @media only screen and (max-width: 900px) {
@@ -457,7 +528,7 @@ body {
     opacity: var(--mobile-hide);
   }
 
-  .linktext{
+  .button-label{
     /*   font-size:2.25rem; */
     font-size:2rem;
     line-height:30px;
