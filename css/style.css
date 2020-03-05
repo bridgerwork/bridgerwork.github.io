@@ -1,40 +1,48 @@
-/* ————— GLOBAL ————— */
-
-/*Root document variables*/
+/*  Root document variables SORT THESE { */
 
 :root{
-  --link-alpha:20,50%,95%,20%;
+  --link-alpha:20,50%,95%,0%;
+  --link-hover-alpha:20,50%,95%,20%;
   --bar-width:120px;
 }
 
-/*Linking Whyte Inktrap*/
+/*   Linking Whyte Inktrap   */
 
 @font-face {
-    font-family: "WhyteInktrap";
-    src: url("fonts/WhyteInktrap-Book.woff2") format('woff2');
-    font-weight: bold;
+  font-family: "WhyteInktrap";
+  src: url("../assets/fonts/WhyteInktrap-Book.woff2") format('woff2');
+  font-weight: bold;
 }
 
 @font-face {
-    font-family: "WhyteInktrap";
-    src: url("fonts/WhyteInktrap-Light.woff2") format('woff2');
-    font-weight: normal;
+  font-family: "WhyteInktrap";
+  src: url("../assets/fonts/WhyteInktrap-Light.woff2") format('woff2');
+  font-weight: normal;
 }
 
-/*Text Styles*/
-
-h1{
+/*  Text Styles  */
+h1, h2 {
   font-family:"WhyteInktrap", sans-serif;
   font-weight:bold;
+  text-align:left;
+}
+
+h1{
   font-size:4.75rem;
   letter-spacing: -.3rem;
   line-height: 4rem;
-  text-align:left;
   transition:font-size .3s, letter-spacing .3s, line-height .3s, opacity .5s;
-  display:flex;
   opacity:0;
   position:sticky;
   top:20px;
+}
+
+h2 {
+  font-size: 2.4rem;
+  letter-spacing: -.15rem;
+  line-height: 2.4rem;
+  padding-top: 56px;
+  margin-bottom: 12px;
 }
 
 p {
@@ -52,12 +60,11 @@ footer{
   font-family:sans-serif;
   letter-spacing:0;
   text-align:right;
-  position:sticky;
+  position:fixed;
   right:30px;
   bottom:18px;
   opacity:1;
   transition:opacity .3s;
-/*  visibility: hidden;*/
 }
 
 a{
@@ -72,8 +79,9 @@ a:visited{
   color:unset;
   stroke:unset;
 }
+/* end root styles } */
 
-/*Global Page Styles*/
+/*  Global Page Styles  {*/
 
 html{
   font-size:16px;
@@ -83,16 +91,19 @@ html{
   height:100%;
 }
 
-.main{
+body {
   transition:padding .2s;
   box-sizing: border-box;
   padding:20px;
-/*  height:100%;*/
+  height:100%; 
   width:100%;
-  display:inline-block;
+  /* height:100vh; */
+  /* display:inline-block; */
 }
 
-/*Bridger Logo*/
+/* end global styles } */
+
+/* Bridger Logo { */
 
 .bridgerlogo{
   display:inline-block;
@@ -114,8 +125,9 @@ html{
   fill:hsl(15, 100%, 55%);
   stroke:none;
 }
+/* end logo } */
 
-/*Bridger Bar*/
+/* Bridger Bar {*/
 
 .bar{
   position:sticky;
@@ -130,7 +142,7 @@ html{
   border:none;
   outline:none;
   box-shadow:none;
-  margin:auto;
+  margin-right:20px;
   box-sizing: border-box;
   transition: width .25s, background-color .5s;
 }
@@ -140,8 +152,9 @@ html{
   --bar-width:125px;
   background: hsl(15, 100%, 48%);
 }
+/* end bridger bar } */
 
-/*Inner bar icon control*/
+/* Inner bar icon control {*/
 
 .bariconcontainer{
   display:flex;
@@ -165,40 +178,43 @@ html{
   fill:none;
   transition:opacity .5s;
 }
+/* end bar icon control } */
 
-#pageright{
+/* SORT THESE STYLES { */
+#content-area{
   display:flex;
-  padding-left:20px;
+  margin-left:20px;
   flex-direction:column;
 }
 
-.arrowgrouplink{
-  opacity:0;
+.button{
   border-radius: 20px;
   padding: 10px;
-  background-color: hsla(20,50%,95%,0%);
   cursor:pointer;
-/*  flex:auto;*/
-  
-
-  transition:width .3s, padding .3s, margin .5s, background-color .3s, opacity 1s;
-}
-
-.arrowgrouplink:hover{
-  margin-left:5px;
-  background-color: hsla(var(--link-alpha));
-}
-
-.linkclassparent{
   display: flex;
   align-items: center;
+  margin-left:5px;
+  background-color: hsla(var(--link-alpha));
+/**/
+  transition:width .3s, padding .3s, margin .5s, background-color .3s, opacity 1s;
+}
+.button:hover {
+  background-color: hsla(var(--link-hover-alpha));
+  transition: background-color .3s;
+}
+.project > .button {
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: start;
+}
+.button > .button {
+  background: none;
+  margin: 0;
 }
 
-.linktext{
+.button-label{
   text-align:left;
   padding-left:10px;
-
-
   font-family:"WhyteInktrap", sans-serif;
   font-weight:100;
   font-size:2.3rem;
@@ -207,78 +223,72 @@ html{
   font-weight: 200;
   transition:font-size .3s, letter-spacing .3s, line-height .3s;  
 }
+/* end thisSection } */
+
+/*  ————— LANDING PAGE ————— { */
 
 
-/* ————— LANDING PAGE ————— */
+/* Landing page themes */
 
-
-/*Landing page themes*/
-
-.theme1{
+.theme0{
   color:#1A1A1A;
   background-color:hsla(45,100%,54%,100%);
   stroke:#1A1A1A;
   --circle-color:hsl(45,100%,54%);
-  --circle-text-color:#FFF;
   --logo-letter-color:#1A1A1A;
 }
 
-.theme2{
+.theme1{
   color:#FFF;
   fill:#FFF;
   background-color:hsl(0, 0%, 10%);
   stroke:#FFF;
   --circle-color:hsl(0, 0%, 10%);
-  --circle-text-color:#1A1A1A;
   --logo-letter-color:#FFF;
 }
 
-.theme3{
+.theme2{
   color:#1A1A1A;
   stroke:#1A1A1A;
   background-color:hsl(197, 100%, 53%);
   --circle-color:hsl(197, 100%, 53%);
-  --circle-text-color:#1A1A1A;
   --logo-letter-color:#1A1A1A;
 } 
 
-.theme4{
+.theme3{
   color:#1A1A1A;
   stroke:#1A1A1A;
   background-color:hsl(45,100%,98%);
   --circle-color:hsl(45,100%,98%);
-  --circle-text-color:#1A1A1A;
-  --link-alpha:15, 10%, 55%, 10%;
+  --link-alpha:15, 10%, 55%, 0%;
+  --link-hover-alpha:15, 10%, 55%, 10%;
   --logo-letter-color:#1A1A1A;
 }
 
-/*Landing Page Styles*/
+/* Landing Page Styles */
 
 #landing{
   transition: background-color .6s, color .5s, stroke .5s, fill .5s;
-  --mobile-hide:1;
   overflow: hidden;
-}
-
-#landingfooter{
-  position:absolute;
+  --mobile-hide:1;
 }
 
 #landinglogo{
   position:absolute;
 }
 
-.arrowcontainer{
+.button-group{
   position:absolute;
   bottom:18px;
   list-style: none;
-  transition:bottom .3s;
-
-  width:auto;
-  margin:auto;
+  transition:opacity .3s, bottom .3s;
+  opacity: 0;
+  /* width:auto; */
+  /* margin:auto; */
 }
+/* end landing page } */
 
-/*Bar Video*/
+/* Bar Video {*/
 
 
 .bar video{
@@ -290,7 +300,7 @@ html{
   transition:opacity .5s;
 }
 
-/*Only the landing page video bar needs a specific focus state*/
+/* Only the landing page video bar needs a specific focus state */
 
 #videobar{
   overflow: hidden;
@@ -311,8 +321,9 @@ html{
   opacity:0;
   transition:visibility .5s, opacity .5s;
 }
+/* end bar video } */
 
-/*Color control circle*/
+/* Color control circle {*/
 
 .circle{
   background-color:var(--circle-color);
@@ -367,21 +378,6 @@ html{
   opacity:1;
 }
 
-/*.circletext {
-  text-align:center;
-  font-family:"WhyteInktrap", sans-serif;
-  font-weight:100;
-  font-size:1.875rem;
-  line-height: 2rem;
-  letter-spacing: -.1rem;
-  font-weight: 200;
-  color:var(--circle-text-color);
-  opacity:0%;
-  transition: opacity .3s, color 1s;
-  cursor:pointer;
-  visibility:hidden;
-}*/
-
 .arrow{
   fill:none;
 }
@@ -401,7 +397,7 @@ html{
 }
 
 .barx:hover{
-/*  width:50px;*/
+  /*   width:50px; */
   stroke:hsla(0,100%,100%,100%);
   cursor:pointer;
 }
@@ -428,26 +424,14 @@ html{
   cursor:pointer;
   background-color: hsla(20,50%,95%,20%);
 }
+/* end color control circle } */
 
+/*  ————— WORKS PAGE —————  {*/
 
-/* ————— WORKS PAGE ————— */
-
-#masonrylist{
-  padding-top:60px;
-  display: flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-/*  max-height:1070px;*/
-  justify-content: space-between;
-}
-
-.spacer{
-  flex:auto;
-  background-color: #000;
-  height:80px;
-  min-width:20%;
-  max-width:320px;
-  opacity: 0;
+#project-list{
+  margin-top:60px;
+  display: grid;
+  list-style: none;
 }
 
 .coverimage{
@@ -457,131 +441,194 @@ html{
   margin-bottom:10px;
   background-color:hsl(197, 100%, 53%);
 }
+/* end works page } */
 
 
-@media only screen and (max-width: 900px) {
-  /* For mobile phones: */
-
-.main{
-  padding:20px;
+/*  ————— INFO PAGE —————  {*/
+#info-page article{
+  float: left;
+  width:70vw;
+  margin:30px 20px;
+  margin-bottom:2vh;
 }
 
-h1{
-  font-size:4rem;
-  letter-spacing: -.25rem;
-  line-height: 3.3rem;
-  opacity: var(--mobile-hide);
+#info-page p, ul, ol{
+  float: left;
+  display:inline-block;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 30px; 
+  margin-right:5%;
 }
 
-.arrowgrouplink{
-  opacity: var(--mobile-hide);
+#info-page ul {
+  /* width:100%; */
+  min-width:244px;
 }
 
-.linktext{
-/*  font-size:2.25rem;*/
-  font-size:2rem;
-  line-height:30px;
-/*  padding-top:12px;*/
+#info-page li{
+  float:left;
+  display:block;
+  max-width:480px;
+  min-width:244px;
+  margin-right:2%;
+  margin-bottom:20px;
 }
 
-.bar{
-  --bar-width:96px;
+#services-list li{
+  width:31%;
 }
 
-.bar:hover{
-  cursor:pointer;
-  --bar-width:105px;
+#team-list li{
+  display:block;
+  height:240px;
+  width:48%;
+  padding-bottom:40px;
 }
 
-#videobar:focus{
+.team-name{
+  display:block;
   width:100%;
+  height:40px;
+  padding:10px 0;
 }
 
-.bararrowleft{
-  visibility:hidden;
+#info-page img{
+  border:none;
+  border-image:none;
+  border-image-width:0;
 }
 
-.barx{
-  visibility:visible;
-}
+.team-photo{
+  background-color:hsl(147,87%,96%);
+  height:100%;
+  width:100%;
 
-.pageright{
-  padding-left:20px;
-}
-
-footer{
-  opacity:0;
-}
-
-.arrowcontainer{
-  bottom:14px;
-}
-
-.arrowgroup{
- width:190px;
 }
 
 
-.bridgerlogo{
-  opacity:0;
-}
+/* end info page } */
+
+/* ------- media queries ---------- { */
+@media only screen and (max-width: 900px) {
+  /*  For mobile phones:  */
+
+  .main{
+    padding:20px;
+  }
+
+  h1{
+    font-size:4rem;
+    letter-spacing: -.25rem;
+    line-height: 3.3rem;
+    opacity: var(--mobile-hide);
+  }
+
+  .button{
+    opacity: var(--mobile-hide);
+  }
+
+  .button-label{
+    /*   font-size:2.25rem; */
+    font-size:2rem;
+    line-height:30px;
+    /*   padding-top:12px; */
+  }
+
+  .bar{
+    --bar-width:96px;
+  }
+
+  .bar:hover{
+    cursor:pointer;
+    --bar-width:105px;
+  }
+
+  #videobar:focus{
+    width:100%;
+  }
+
+  .bararrowleft{
+    visibility:hidden;
+  }
+
+  .barx{
+    visibility:visible;
+  }
+
+  .content-area{
+    padding-left:20px;
+  }
+
+  footer{
+    opacity:0;
+  }
+
+  .button-group{
+    bottom:14px;
+  }
+
+  .arrowgroup{
+    width:190px;
+  }
+
+
+  .bridgerlogo{
+    opacity:0;
+  }
 
 }
 
 @media only screen and (max-height: 500px) {
-/* For landscape mobile phones */
+  /*  For landscape mobile phones  */
 
-h1{
-  font-size:4rem;
-  letter-spacing: -.25rem;
-  line-height: 3.3rem;
-  opacity: var(--mobile-hide);
-}
+  h1{
+    font-size:4rem;
+    letter-spacing: -.25rem;
+    line-height: 3.3rem;
+    opacity: var(--mobile-hide);
+  }
 
-a:hover{
-  margin-left:-5px;
-}
+  a:hover{
+    margin-left:-5px;
+  }
 
-#video:focus{
-  --bar-width:100%;
-}
+  #video:focus{
+    --bar-width:100%;
+  }
 
-footer{
-  opacity:0;
-}
+  .button{
+    opacity: var(--mobile-hide);
+  }
 
-.arrowgrouplink{
-  opacity: var(--mobile-hide);
-}
-
-.arrowcontainer{
-  position:absolute;
-  float:right;
-  right:20px;
-}
+  .button-group{
+    position:absolute;
+    float:right;
+    right:20px;
+  }
 
 }
 
 @media only screen and (max-width: 400px) {
-  /* For small mobile phones: */
+  /*  For small mobile phones:  */
 
-h1{
-  font-size:3.6rem;
-  letter-spacing: -.25rem;
-  line-height: 3rem;
-  opacity: var(--mobile-hide);
+  h1{
+    font-size:3.6rem;
+    letter-spacing: -.25rem;
+    line-height: 3rem;
+    opacity: var(--mobile-hide);
+  }
+
+  .bar{
+    --bar-width:85px;
+  }
+
+  .button{
+    opacity: var(--mobile-hide);
+  }
+
+  .content-area{
+    padding-left:10px;
+  }
 }
-
-.bar{
-  --bar-width:85px;
-}
-
-.arrowgrouplink{
-  opacity: var(--mobile-hide);
-}
-
-.pageright{
-  padding-left:10px;
-}
-
-
+/* end media queries } */
