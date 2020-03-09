@@ -3,6 +3,7 @@
   --link-alpha: 20,50%,95%,0%;
   --link-hover-alpha: 20,50%,95%,20%;
   --bar-width: 120px;
+  --bar-margin: 20px;
 }
 /*end variables }}}*/
 
@@ -46,12 +47,11 @@ html {
   box-sizing: border-box;
   font-size: 16px;
   width: 100vw;
-  transform: translateZ(0);
   height: 100%;
 }
 *, *:before, *:after {
-    box-sizing: inherit;
-  }
+  box-sizing: inherit;
+}
 body {
   transition: padding .2s;
   margin: 0;
@@ -59,11 +59,17 @@ body {
   height: 100%; 
   width: 100%;
 }
-#content-area{
+.content-area{
   display: flex;
   float: left;
-  margin-left: 20px;
   flex-direction: column;
+}
+footer {
+  position: fixed;
+  right: 30px;
+  bottom: 18px;
+  opacity: 1;
+  transition: opacity .3s;
 }
 /* end general styles }}} */
 
@@ -100,7 +106,6 @@ h2 {
   font-size: 2.4rem;
   letter-spacing: -.15rem;
   line-height: 2.4rem;
-  padding-top: 56px;
   margin-bottom: 12px;
 }
 a{
@@ -124,29 +129,21 @@ p {
   font-weight: 400;
   font-style: normal;
   color: #545454;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   text-align: left;
-  line-height: 1.5rem;
+  /* line-height: 1.5rem; */
 }
 footer{
   font-size: .75rem;
   font-family: sans-serif;
   letter-spacing: 0;
   text-align: right;
-  position: fixed;
-  right: 30px;
-  bottom: 18px;
-  opacity: 1;
-  transition: opacity .3s;
 }
 /*end body & footer }}}*/
 /* end text styles }}}*/
 
 /* Button styles {{{*/
 .button-group{
-  position: absolute;
-  bottom: 18px;
-  list-style: none;
   transition: opacity .3s, bottom .3s;
   opacity: 0;
 }
@@ -181,13 +178,11 @@ footer{
 
 /* Bridger logo {{{*/
 .bridgerlogo{
-  display: inline-block;
-  float: right;
   width: 86px;
   right: 30px;
   top: 20px;
   opacity: 1;
-  position: sticky;
+  position: fixed;
   transition: opacity .3s;
 }
 .bridgerlogoletters{
@@ -210,7 +205,7 @@ footer{
   float: left;
   display: inline-block;
   border-radius: 4px;
-  margin-right: 20px;
+  margin-right: var(--bar-margin);
   transition: width .25s, background-color .5s;
 }
 .bar:hover{
@@ -247,6 +242,10 @@ footer{
   transition: background-color .6s, color .5s, stroke .5s, fill .5s;
   overflow: hidden;
   --mobile-hide: 1;
+}
+#landing .button-group{
+  position: absolute;
+  bottom: 18px;
 }
 /* }}} */
 
@@ -378,9 +377,7 @@ footer{
   margin-top: 60px;
   padding: 0;
   display: grid;
-  gap: 20px;
-  /* grid-template-columns: repeat(5, 150px); */
-  /* grid-template-rows: repeat(7, 140px); */
+  gap: var(--bar-margin);
 }
 @media only screen and (max-width: 994px) {
   #project-list{
@@ -421,41 +418,55 @@ footer{
 }
 /* end works page }}}*/
 
-/* --------------------------INFO PAGE-------------------------- {{{*/
+/* --------------------------INFO PAGE-------------------------- {{{ */
 article{
-  float: left;
-  width: 70vw;
-  margin-left: 20px;
-  margin-bottom: 2vh;
-}
-#info-page p, info-page ul, info-page ol{
-  float: left;
   display: inline-block;
-  font-size: 22px;
+  width: calc(100% - var(--bar-width) - 2*var(--bar-margin));
+  margin-bottom: 30px;
+  clear: both;
+}
+section {
+  margin-top: 60px;
+  font-size: 1.4rem;
+  line-height: 2rem; 
   letter-spacing: 0;
-  line-height: 30px; 
+  clear: both;
+}
+#intro p {
+  display: inline-block;
+  width: 44%;
   margin-right: 5%;
+  vertical-align: text-top;
 }
-#info-page ul {
-  /* width: 100%; */
-  min-width: 244px;
+.secondary-page .button-group {
+  margin-top: 120px;
+  clear: both;
 }
-#info-page li{
-  float: left;
-  display: block;
-  max-width: 480px;
+.secondary-page .button-group ul{
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 240px);
+  column-gap: var(--bar-margin);
+  /* flex-flow: row wrap; */
+}
+.secondary-page .button-group li {
+  flex: 1 0 auto;
+}
+ul.team-info {
   min-width: 244px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#team-list {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 70%;
+}
+.team-info li {
+  /* float: left; */
+  min-width: 244px;
+  max-width: 300px;
   margin-right: 2%;
   margin-bottom: 20px;
-}
-#services-list li{
-  width: 31%;
-}
-#team-list li{
-  display: block;
-  height: 240px;
-  width: 48%;
-  padding-bottom: 40px;
 }
 .team-name{
   display: block;
@@ -463,108 +474,108 @@ article{
   height: 40px;
   padding: 10px 0;
 }
-#info-page img{
-  border: none;
-  border-image: none;
-  border-image-width: 0;
-}
 .team-photo{
+  /* display: block; */
   background-color: hsl(147,87%,96%);
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 300px;
+  border: none;
 }
 /* end info page }}}*/
 
 /* --------------------------MEDIA QUERIES-------------------------- {{{*/
-/*{{{*/@media only screen and (max-width: 900px) {
-  /* For mobile phones: */
-  .main{
-    display: block;
-    padding: 20px;
-    height: 100%;
-  }
-  h1{
-    font-size: 4rem;
-    letter-spacing: -.25rem;
-    line-height: 3.3rem;
-    opacity: var(--mobile-hide);
-  }
-  .button{
-    opacity: var(--mobile-hide);
-  }
-  .button-label{
-    /* font-size: 2.25rem; */
-    font-size: 2rem;
-    line-height: 30px;
-    /* padding-top: 12px; */
-  }
-  .bar{
-    --bar-width: 96px;
-  }
-  .bar: hover{
-    cursor: pointer;
-    --bar-width: 105px;
-  }
-  #videobar: focus{
-    width: 100%;
-  }
-  .bararrowleft{
-    visibility: hidden;
-  }
-  .barx{
-    visibility: visible;
-  }
-  footer{
-    opacity: 0;
-  }
-  .button-group{
-    bottom: 14px;
-  }
-  .bridgerlogo{
-    opacity: 0;
-  }
-} /*}}}*/
+/* medium screen (<900px) {{{*/
+@media only screen and (max-width: 900px) {
+/*  /* For mobile phones: */*/
+.main{
+  display: block;
+  padding: 20px;
+  height: 100%;
+}
+h1{
+  font-size: 4rem;
+  letter-spacing: -.25rem;
+  line-height: 3.3rem;
+  opacity: var(--mobile-hide);
+}
+.button{
+  opacity: var(--mobile-hide);
+}
+.button-label{
+  /* font-size: 2.25rem; */
+  font-size: 2rem;
+  line-height: 30px;
+  /* padding-top: 12px; */
+}
+.bar{
+  --bar-width: 96px;
+}
+.bar: hover{
+  cursor: pointer;
+  --bar-width: 105px;
+}
+#videobar: focus{
+  width: 100%;
+}
+.bararrowleft{
+  visibility: hidden;
+}
+.barx{
+  visibility: visible;
+}
+footer{
+  opacity: 0;
+}
+.button-group{
+  bottom: 14px;
+}
+.bridgerlogo{
+  opacity: 0;
+}
+} /* end medium screen }}}*/
 
-/*{{{*/@media only screen and (max-height: 500px) {
-  /* For landscape mobile phones */
-  h1{
-    font-size: 4rem;
-    letter-spacing: -.25rem;
-    line-height: 3.3rem;
-    opacity: var(--mobile-hide);
-  }
-  a: hover{
-    margin-left: -5px;
-  }
-  #video: focus{
-    --bar-width: 100%;
-  }
-  .button{
-    opacity: var(--mobile-hide);
-  }
-  .button-group{
-    position: absolute;
-    float: right;
-    right: 20px;
-  }
-} /*}}}*/
+/* short screen (550px) {{{*/
+@media only screen and (max-height: 500px) {
+/* For landscape mobile phones */
+h1{
+  font-size: 4rem;
+  letter-spacing: -.25rem;
+  line-height: 3.3rem;
+  opacity: var(--mobile-hide);
+}
+a: hover{
+  margin-left: -5px;
+}
+#video: focus{
+  --bar-width: 100%;
+}
+.button{
+  opacity: var(--mobile-hide);
+}
+.button-group{
+  position: absolute;
+  float: right;
+  right: 20px;
+}
+} /* end short screen }}}*/
 
-/*{{{*/@media only screen and (max-width: 400px) {
-  /* For small mobile phones: */
-  h1{
-    font-size: 3.6rem;
-    letter-spacing: -.25rem;
-    line-height: 3rem;
-    opacity: var(--mobile-hide);
-  }
-  .bar{
-    --bar-width: 85px;
-  }
-  .button{
-    opacity: var(--mobile-hide);
-  }
-  .content-area{
-    margin-left: 10px;
-  }
-} /*}}}*/
+/* thin screen (400px) {{{*/
+@media only screen and (max-width: 400px) {
+/* For small mobile phones: */
+h1{
+  font-size: 3.6rem;
+  letter-spacing: -.25rem;
+  line-height: 3rem;
+  opacity: var(--mobile-hide);
+}
+.bar{
+  --bar-width: 85px;
+}
+.button{
+  opacity: var(--mobile-hide);
+}
+.content-area{
+  margin-left: 10px;
+}
+} /* end thin screen }}}*/
 /* end media queries }}}*/

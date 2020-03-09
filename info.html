@@ -3,7 +3,6 @@
 <html lang="en" id="info-page" class="secondary-page theme3">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="assets/images/Bridger_Favicon.png"/>
@@ -17,11 +16,22 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
     <script src="js/main.js" defer></script>
-
   </head>
 
-  <body class=landing>
-    <main role="main">
+  <body>
+    <main class="main" role="main">
+      <a class="bridgerlogo" href="index.html">
+        <svg viewBox="0 0 400.25 117.22" xmlns="http://www.w3.org/2000/svg">
+          <path class="bridgerlogoletters" d="m30.44 95h-30.44v-72.76h29.22c14.2 0 22.47 8 22.47 20.43a16.83 16.83 0 0 1 -9 15c4.39 2 10 6.64 10 16.34.02 13.61-9.27 20.99-22.25 20.99zm-2.35-60.09h-13.89v16.75h13.89c6 0 9.4-3.37 9.4-8.37s-3.37-8.38-9.4-8.38zm.91 29.52h-14.8v17.88h14.8c6.44 0 9.5-4.09 9.5-9s-3.05-8.88-9.5-8.88z"/>
+          <path class="bridgerlogoletters" d="m103.28 95-14.2-29h-10.21v29h-14.2v-72.76h28.5c14.81 0 23.6 10.11 23.6 22.27a19.58 19.58 0 0 1 -13.29 19.1l16.25 31.39zm-11-60.07h-13.41v19.2h13.38c6.23 0 10.32-4 10.32-9.6s-4.09-9.62-10.32-9.62z"/>
+          <path class="bridgerlogobar" d="m128.92 117.22v-117.22h14.2v117.22z"/>
+          <path class="bridgerlogoletters" d="m203 88c-4.81 4.8-11.65 7-19.21 7h-26.26v-72.76h26.25c7.56 0 14.4 2.15 19.21 7 8.17 8.17 7.35 18.18 7.35 29.11s.82 21.51-7.34 29.65zm-9.91-48.62c-2.45-3-5.72-4.5-10.63-4.5h-10.73v47.4h10.72c4.91 0 8.18-1.53 10.63-4.5 2.65-3.27 3.06-8.47 3.06-19.51s-.41-15.6-3.06-18.86z"/>
+          <path class="bridgerlogoletters" d="m267.14 87.32c-5.82 6-12.77 8.27-20.53 8.27a26.76 26.76 0 0 1 -19.61-8c-7.36-7.35-7.16-16.44-7.16-29s-.2-21.66 7.16-29a26.44 26.44 0 0 1 19.61-8c16.85 0 25.43 11 27.38 23.29h-14.31c-1.63-6.84-5.82-10.62-13.07-10.62a11.8 11.8 0 0 0 -9.09 3.88c-2.76 3.06-3.48 6.43-3.48 20.43s.72 17.47 3.48 20.53a11.73 11.73 0 0 0 9.09 3.78 13.36 13.36 0 0 0 10.11-4.08 14 14 0 0 0 3.28-9.67v-2.76h-13.39v-11.85h27.48v10.63c0 10.52-1.84 16.85-6.95 22.17z"/>
+
+          <path class="bridgerlogoletters" d="m285.94 95v-72.76h47.91v12.67h-33.71v17.09h28.71v12.64h-28.71v17.67h33.71v12.69z"/>
+
+          <path class="bridgerlogoletters" d="m383.81 95-14.2-29h-10.22v29h-14.2v-72.76h28.5c14.82 0 23.6 10.11 23.6 22.27a19.57 19.57 0 0 1 -13.29 19.1l16.25 31.39zm-11-60.07h-13.42v19.2h13.38c6.24 0 10.32-4 10.32-9.6s-4.09-9.62-10.32-9.62z"/></svg>
+      </a>
 
       <nav class="bar" role="navigation">
         <a class="bariconcontainer" href="index.html">
@@ -29,17 +39,19 @@
         </a>
       </nav>
 
+      <article>
+        <h1 class="page-title">Info</h1>
 
-      <article class="content-area">
-        <h1 class="page-title">Info</h1><br>
+        <!-- INTRO -->
         <section id="intro">
           <p>Bridger is a digital product design agency that envisions end-to-end, user-centered, experiences for aspirational startups and global enterprises.</p>
           <p>We partner closely with each client to discover, define, design and deliver solutions that meet users where they are and inspire them to go further.</p>
         </section>
 
+        <!-- SERVICES -->
         <section id="services">
           <h2>Services</h2>
-          <ul id="services-list">
+          <ul class="team-info" id="services-list">
             <li>Rapid Prototyping</li>
             <li>User Experience</li>
             <li>Visual Design</li>
@@ -52,9 +64,10 @@
           </ul>
         </section>
 
+        <!-- TEAM -->
         <section id="team">
           <h2>Team</h2>
-          <ul id="team-list">
+          <ul class="team-info" id="team-list">
             <li class="team-member"><img class="team-photo"></img><h4 class="team-name">Matt Simpson</h4></li>
             <li class="team-member"><img class="team-photo"></img><h4 class="team-name">Jeremiah Simpson</h4></li>
             <li class="team-member"><img class="team-photo"></img><h4 class="team-name">Michael Brandley</h4></li>
@@ -65,6 +78,7 @@
             <li class="team-member"><img class="team-photo"></img><h4 class="team-name">Jeff Wade</h4></li>
         </section>
 
+        <!-- NAVIGATION BUTTONS -->
         <nav role="navigation" class="button-group">
           <ul>
             <li>
@@ -82,7 +96,7 @@
             <li>
               <a class="button" href="mailto:hello@bridgercreative.com">
                 <svg class="icon" height="85" viewBox="0 0 85 85" width="85" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-width="2" transform="translate(1 1)"><path d="m13.9567246 63.1440972c0-5.3040975 0-10.608195 0-15.9122925 0-8.9957634.5909079-24.0877075 10.289339-24.0877075 9.698431 0 9.7830477 15.0919441 9.698431 24.0877075-.0528307 5.616532-.0561839 10.9175364-.0100596 15.9030132.0051375.5522763-.438429 1.004127-.9907056 1.0092365-.0030837.0000286-.0061676.0000428-.0092516.0000428h-17.9777532c-.5522848 0-1-.4477152-1-1z"/><path d="m23.9567246 23.1440972h15.1706954m5.9241856 0h12.7456043c11.1022391 0 11.1991037 15.0919441 11.1022391 24.0877075-.0584411 5.4273916-.0639935 8.9221305-.0166573 14.9313939.015604 1.9808986-.0473362 1.9808986-1.8130885 1.9808986-7.2495394 0-19.1238485 0-33.6229273 0"/><path d="m39.7601997 14v1.9803592c0 .3667541.2007645.7040819.5231321.8789751l3.4825985 1.8894044c.3223677.1748932.5231322.5122209.5231322.878975v20.1261926c0 .5522847.4477153 1 1 1h3.3059896c.5522847 0 1-.4477153 1-1v-25.7539063c0-.5522847-.4477153-1-1-1h-7.8348524c-.5522848 0-1 .4477153-1 1z" transform="matrix(-1 0 0 1 89.355252 0)"/><path d="m19.229139 0h44.541722c6.6863905 0 9.1110373.69619208 11.5554818 2.00349528 2.4444444 1.30730319 4.3628587 3.2257175 5.6701619 5.67016194 1.3073032 2.44444448 2.0034953 4.86909128 2.0034953 11.55548178v44.541722c0 6.6863905-.6961921 9.1110373-2.0034953 11.5554818-1.3073032 2.4444444-3.2257175 4.3628587-5.6701619 5.6701619-2.4444445 1.3073032-4.8690913 2.0034953-11.5554818 2.0034953h-44.541722c-6.6863905 0-9.1110373-.6961921-11.55548178-2.0034953-2.44444444-1.3073032-4.36285875-3.2257175-5.67016194-5.6701619-1.3073032-2.4444445-2.00349528-4.8690913-2.00349528-11.5554818v-44.541722c0-6.6863905.69619208-9.1110373 2.00349528-11.55548178 1.30730319-2.44444444 3.2257175-4.36285875 5.67016194-5.67016194 2.44444448-1.3073032 4.86909128-2.00349528 11.55548178-2.00349528z"/><g stroke-linecap="round"><path d="m19.115089 58.172327h9.21107"/><path d="m19.115089 54.644097h9.21107"/></g></g></svg>
-                <span class="button-label">Be our<br>pen pal</span>
+                <span class="button-label">Send a<br>note</span>
               </a>
             </li>
             <li>
@@ -93,11 +107,11 @@
             </li>
           </ul>
         </nav>
-
       </article>
+
+    <footer>Made in SD &amp; NY &mdash; &copy;&nbsp;2020 Bridger&nbsp;LLC</footer>
     </main>
 
-    <footer id="landingfooter">Made in SD &amp; NY &mdash; &copy;&nbsp;2020 Bridger&nbsp;LLC </footer>
 
   </body>
 </html>
