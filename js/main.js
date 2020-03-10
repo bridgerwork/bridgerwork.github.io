@@ -1,8 +1,15 @@
+/* GLOBAL */
+  // fade in page elements on load
+  $(document).ready(function() {
+    $("h1").css("opacity","1");
+    $(".button-group").css("opacity","1");
+  });
+
 /* 
    LANDING PAGE
 */
 if ( document.querySelector("#landing")) {
-  console.log( "on the landing page" );
+  // console.log( "on the landing page" );
   var pick = 0;
   var circledime = 115;
   // Load landing page and initialize theme
@@ -11,12 +18,6 @@ if ( document.querySelector("#landing")) {
     element.classList.toggle('theme' + pick);
     $(".theme0").css("--circle-color","hsl(0, 0%, 10%)");
   } 
-
-  // fade in page elements on load
-  $(document).ready(function() {
-    $("h1").css("opacity","1");
-    $(".button-group").css("opacity","1");
-  });
 
   // Change the theme when circlehitbox is clicked
   $("html").on('click',"#circlehitbox",function() {
@@ -171,10 +172,17 @@ if ( document.querySelector("#landing")) {
 
 }
 
+
+/* INFO PAGE */
+
 if (document.querySelector("#team-list")) {
   let names = document.querySelectorAll(".name");
+  let spaces = document.querySelectorAll(".space");
   for (var i = 0; i < names.length; i++) {
-    names[i].classList.toggle("hidden");
+    names[i].classList.toggle("initial");
+  }
+  for (var i = 0; i < spaces.length; i++) {
+    spaces[i].classList.toggle("initial");
   }
   let TEAMLIST = document.querySelectorAll(".team-member");
 // //   console.log( TEAMLIST );
@@ -196,4 +204,4 @@ if (document.querySelector("#team-list")) {
 // //     TEAMLIST[0].addEventListener("mouseenter", function (){ explodeName( this ); }, false);
 //     TEAMLIST[0].addEventListener("mouseout", function (){ collapseName( this ); }, false);
 // //   // }
-} else { console.log( "no team list here" ); }
+} else { }

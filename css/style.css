@@ -469,7 +469,6 @@ ul.team-info {
   max-width: 660px;
   font-family: WhyteInktrap;
   font-weight: bold;
-  line-height: 1.6rem;
   color: white;
   overflow: hidden;
 }
@@ -478,7 +477,6 @@ ul.team-info {
   border: none;
 }
 .team-name{
-  /* opacity: 40%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -487,38 +485,61 @@ ul.team-info {
   width: 100%;
   height: 100%;
   padding: 10px 0 0;
-  overflow-wrap: break-word;
   margin-top: 0;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  transition: font-size .3s, top .3s, bottom .3s, left .3s, right, .3s;
+  font-size: 0.8rem;
+  overflow: hidden;
 }
-.team-member:hover .team-name {
-  font-size: 5.6rem;
-  line-height: 4.8rem;
-  opacity: 45%;
+.name, .space {
+  padding: 1.6rem 0;
+  top: 0;
+  transition: filter 0.3s, left 0.3s, right 0.3s, height 0.3s, width 0.3s, font-size 0.3s, top 0.3s, bottom 0.3s, opacity 0.3s, background 0.3s;
 }
 .name {
-  height: 4.8rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  opacity: 1;
 }
-.name.hidden {
+.name.initial {
+  color: black;
+  /* opacity: 0.1; */
   background-color: hsl(0, 100%, 100%, 1);
 }
-.team-member:hover .first-name{
-  position: inherit;
-  height: auto;
-  width: auto;
-  top: 8px;
-  left: 4px;
-  background: none;
+.first-name {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.team-member:hover .last-name{
-  position: inherit;
-  height: auto;
-  width: auto;
-  bottom: 8px;
+.last-name {
+  position: absolute;
   right: 0;
+  top: calc(100% - 5.6rem);
+}
+.team-photo{
+  filter: saturate(70%);
+  transition: filter 1s;
+}
+.team-member:hover .team-photo{
+  filter: saturate(100%) blur(0);
+}
+.team-member:hover .team-name {
+  font-size: 2.4rem;
+  line-height: 4.8rem;
+  opacity: 95%;
+}
+.team-member:hover .name {
+  color: white;
+  height: 0;
+  padding: 0;
   background: none;
+  opacity: 1;
+}
+.team-member:hover .first-name {
+  left: 1rem;
+  top: calc(100% - 5.6rem);
+}
+.team-member:hover .last-name {
+  right: 1rem;
+  top: 0;
 }
 /* end info page }}}*/
 
@@ -564,6 +585,7 @@ h1{
 }
 footer{
   opacity: 0;
+  z-index: -100;
 }
 .button-group{
   bottom: 14px;
