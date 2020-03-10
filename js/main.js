@@ -167,3 +167,9 @@ $("html").on('mouseout','#circlehitbox',function() {
   $(".theme3").css("--circle-color","hsl(45,100%,54%)");
   $("#innercircle").css("visibility","hidden");
 });
+
+// if (document.querySelector(".team-list") != null) {
+//   console.log("yep, the team list is here.");
+// } else {
+   
+// }
