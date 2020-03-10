@@ -471,6 +471,7 @@ ul.team-info {
   font-weight: bold;
   line-height: 1.6rem;
   color: white;
+  overflow: hidden;
 }
 .team-photo{
   width: 100%;
@@ -489,20 +490,35 @@ ul.team-info {
   overflow-wrap: break-word;
   margin-top: 0;
   font-size: 1.6rem;
+  line-height: 2.4rem;
+  transition: font-size .3s, top .3s, bottom .3s, left .3s, right, .3s;
 }
-.team-name.hover {
+.team-member:hover .team-name {
   font-size: 5.6rem;
-  opacity: 85%;
+  line-height: 4.8rem;
+  opacity: 45%;
 }
-span.first-name.hover{
-  position: absolute;
+.name {
+  height: 4.8rem;
+}
+.name.hidden {
+  background-color: hsl(0, 100%, 100%, 1);
+}
+.team-member:hover .first-name{
+  position: inherit;
+  height: auto;
+  width: auto;
   top: 8px;
   left: 4px;
+  background: none;
 }
-span.last-name.hover{
-  position: absolute;
-  bottom: 4.8rem;
+.team-member:hover .last-name{
+  position: inherit;
+  height: auto;
+  width: auto;
+  bottom: 8px;
   right: 0;
+  background: none;
 }
 /* end info page }}}*/
 
