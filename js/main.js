@@ -5,9 +5,7 @@
     $(".button-group").css("opacity","1");
   });
 
-/* 
-   LANDING PAGE
-*/
+/* LANDING PAGE */
 if ( document.querySelector("#landing")) {
   // console.log( "on the landing page" );
   var pick = 0;
@@ -169,39 +167,13 @@ if ( document.querySelector("#landing")) {
     $(".theme3").css("--circle-color","hsl(45,100%,54%)");
     $("#innercircle").css("visibility","hidden");
   });
-
 }
 
+/* WORKS PAGE */
+/* end works page */
+
+/* CASE STUDY */
+/* end case study */
 
 /* INFO PAGE */
-
-if (document.querySelector("#team-list")) {
-  let names = document.querySelectorAll(".name");
-  let spaces = document.querySelectorAll(".space");
-  for (var i = 0; i < names.length; i++) {
-    names[i].classList.toggle("initial");
-  }
-  for (var i = 0; i < spaces.length; i++) {
-    spaces[i].classList.toggle("initial");
-  }
-  let TEAMLIST = document.querySelectorAll(".team-member");
-// //   console.log( TEAMLIST );
-
-// //   function explodeName(person) {
-// //     let firstName = person.querySelector(".team-name");
-// //     // let lastName = person.querySelector(".last-name");
-// //     firstName.classList.toggle("hover");
-// //     // lastName.classList.toggle("hover");
-// //   }
-//   function collapseName(person) {
-//     let firstName = person.querySelector(".team-name");
-//     // let lastName = person.querySelector(".last-name");
-//     firstName.classList.toggle("hover");
-//     // lastName.classList.toggle("hover");
-//   }
-// //   // for person in TEAMLIST {
-// //   //   person.onmouseover = explodeName; 
-// //     TEAMLIST[0].addEventListener("mouseenter", function (){ explodeName( this ); }, false);
-//     TEAMLIST[0].addEventListener("mouseout", function (){ collapseName( this ); }, false);
-// //   // }
-} else { }
+/* end info page */

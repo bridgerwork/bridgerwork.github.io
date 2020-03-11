@@ -427,6 +427,7 @@ article{
 }
 section {
   margin-top: 60px;
+  max-width: 1900px;
   font-size: 1.4rem;
   line-height: 2rem; 
   letter-spacing: 0;
@@ -437,6 +438,21 @@ section {
   width: 44%;
   margin-right: 5%;
   vertical-align: text-top;
+}
+@media only screen and (max-width: 840px) {
+  #intro p {
+    display: block;
+    width: 90%;
+  }
+  #intro p:first-child {
+    margin-bottom: 1.6rem;
+  }
+}
+@media only screen and (max-width: 840px) {
+  #intro p {
+    display: block;
+    width: 100%;
+  }
 }
 .secondary-page .button-group {
   margin-top: 120px;
@@ -449,6 +465,12 @@ section {
   column-gap: var(--bar-margin);
   /* flex-flow: row wrap; */
 }
+@media only screen and (max-width: 638px) {
+  .secondary-page .button-group ul{
+    display: flex;
+    flex-direction: column;
+  }
+}
 .secondary-page .button-group li {
   flex: 1 0 auto;
 }
@@ -457,24 +479,42 @@ ul.team-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   max-width: 90%;
-  gap: 0.5rem;
+  gap: 20px;
+}
+@media only screen and (max-width: 1166px) {
+  ul.team-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 812px) {
+  ul.team-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
 }
 #services-list > li {
   min-width: 330px;
   max-width: 660px;
 }
+@media only screen and (max-width: 812px) {
+  #services-list > li {
+    margin-top: 0.8rem;
+  }
+}
 .team-member {
   position: relative;
   min-width: 330px;
-  max-width: 660px;
+  max-width: 100%;
   font-family: WhyteInktrap;
   font-weight: bold;
   color: white;
   overflow: hidden;
 }
-.team-photo{
-  width: 100%;
-  border: none;
+@media only screen and (max-width: 512px) {
+  .team-member {
+    min-width: 140px;
+  }
 }
 .team-name{
   display: flex;
@@ -490,7 +530,7 @@ ul.team-info {
   overflow: hidden;
 }
 .name, .space {
-  padding: 1.6rem 0;
+  padding: 0;
   top: 0;
   transition: filter 0.3s, left 0.3s, right 0.3s, height 0.3s, width 0.3s, font-size 0.3s, top 0.3s, bottom 0.3s, opacity 0.3s, background 0.3s;
 }
@@ -498,12 +538,15 @@ ul.team-info {
   padding-left: 8px;
   padding-right: 8px;
   opacity: 1;
-  top: calc(50% - 2.8rem);
+  top: calc(50% - 0.4rem);
+  background: none;
 }
-.name.initial {
+@media (hover) {
+.name {
   /* color: black; */
   /* opacity: 0.1; */
-  /* background-color: hsl(0, 100%, 100%, 1); */
+  background-color: hsl(0, 100%, 100%, 1);
+}
 }
 .first-name {
   position: absolute;
@@ -515,8 +558,11 @@ ul.team-info {
   right: 0;
 }
 .team-photo{
+  width: 100%;
+  border: none;
   filter: saturate(80%);
   transition: filter 1s;
+  border-radius: 0.8rem;
 }
 .team-member:hover .team-photo{
   filter: saturate(100%) blur(0);
