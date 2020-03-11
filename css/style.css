@@ -64,7 +64,7 @@ body {
   float: left;
   flex-direction: column;
 }
-footer {
+.credit {
   position: fixed;
   right: 30px;
   bottom: 18px;
