@@ -18,6 +18,6 @@ It's fairly intuitive. If you see something that needs a'fixin, have an idea, or
 
 ## Contributing
 If you want to get into the code, or make updates to content, then create a new branch, make your changes, and then open a pull request.
-If you don't know what any of that means, then talk to jeff, read some [guides](guides.github.com), or watch some [videos](https://www.youtube.com/user/GitHubGuides/featured).
+If you don't know what any of that means, then talk to jeff, read some [guides](https://guides.github.com), or watch some [videos](https://www.youtube.com/user/GitHubGuides/featured).
 
 Thank you. Come again.
