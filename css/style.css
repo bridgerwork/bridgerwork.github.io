@@ -649,7 +649,7 @@ address{
    line-height: 1.2rem;
 }
 address > section:first-child {
-  /* margin-bottom: 0.8rem; */
+  margin-bottom: 0.8rem;
 }
 #phone, #email {
   display: block;
