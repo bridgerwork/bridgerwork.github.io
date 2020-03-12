@@ -549,11 +549,6 @@ article > section {
   background: none;
   opacity: 1;
 }
-@media (hover) {
-  .name {
-    background-color: hsl(0, 100%, 100%, 1);
-  }
-}
 .first-name {
   position: absolute;
   left: 0;
@@ -577,7 +572,7 @@ article > section {
   border: none;
   filter: saturate(80%);
   transition: filter 1s;
-  border-radius: 0.8rem;
+  border-radius: 3px;
 }
 .team-member:hover .team-photo, .team-member:focus .team-photo {
   filter: saturate(100%);
