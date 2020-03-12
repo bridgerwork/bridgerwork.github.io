@@ -185,11 +185,12 @@ p {
   opacity: 1;
   position: fixed;
   transition: opacity .3s;
+  z-index: 900;
 }
 .bridgerlogo:hover, .bridgerlogo:focus {
-  width: 90px;
-  right: 26px;
-  top: 18px;
+  width: 87px;
+  right: 29px;
+  top: 19px;
 }
 .bridgerlogoletters{
   fill: var(--logo-letter-color);
@@ -702,6 +703,100 @@ address > section:first-child {
 /* end secondary footer }}} */
 
 /* end info page }}}*/
+
+/* --------------------------CASE STUDIES------------------------------- {{{*/
+.case-study body{
+   background-color: #eee;
+}
+.case-study main {
+  position: relative;
+  margin: 2.4rem auto;
+  display: flex;
+  width: 70%;
+  min-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 1.6rem rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.case-study article{
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.case-study header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 70vh; */
+  min-height: 480px;
+  width: 100%;
+  background-color: #0F049F;
+  margin-bottom: 407px;
+}
+.case-study hgroup {
+  display: none;
+}
+.case-study header > img {
+  position: absolute;
+  bottom: -407px;
+}
+.case-study section {
+  margin: 3.2rem 1.6rem;
+  width: 720px;
+}
+p[role="lead-in"] {
+font-size: 24px;
+color: #FFFFFF;
+line-height: 2.4rem;
+width: 60%;
+margin-bottom: 2.4rem;
+}
+#close-button {
+  position: fixed;
+  top: calc(50% - 29px);
+  right: calc(15% - 29px - 2.4rem);
+  cursor: pointer;
+}
+#close-button > a {
+  display: block;
+  position: relative;
+  top: -66px;
+  left: -6px;
+  height: 72px;
+  width: 72px;
+  /* background-color: rgba(255,13,24,0.4); */
+}
+#close-button .icon {
+  stroke: #FFF;
+}
+.case-study .credit {
+  position: absolute;
+  bottom: 18px;
+  right: 30px;
+}
+/* end case study header */
+/* case study sections */
+.case-study #services {
+  /* width: 100%; */
+  margin: 0.8rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed #eee;
+  border-top: 1px dashed #eee;
+}
+.case-study #services ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* end case studies }}}*/
 
 /* --------------------------MEDIA QUERIES-------------------------- {{{*/
 /* medium screen (<900px) {{{*/
