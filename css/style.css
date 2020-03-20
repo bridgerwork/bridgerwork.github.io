@@ -700,9 +700,13 @@ address > section:first-child {
 /* end info page }}}*/
 
 /* --------------------------CASE STUDIES------------------------------- {{{*/
+
+/* case study container {{{ */
+
 .case-study body{
    background-color: #eee;
 }
+
 .case-study main {
   position: relative;
   margin: 2.4rem auto;
@@ -716,12 +720,17 @@ address > section:first-child {
   box-shadow: 0 0 1.6rem rgba(0,0,0,0.1);
   overflow: hidden;
 }
+
 .case-study article{
   width: 100%;
   display:flex;
   flex-direction: column;
   align-items: center;
 }
+
+/* }}} case study container */
+
+/* case study header {{{ */
 .case-study header {
   position: relative;
   display: flex;
@@ -734,17 +743,16 @@ address > section:first-child {
   background-color: #0F049F;
   margin-bottom: 407px;
 }
+
 .case-study hgroup {
   display: none;
 }
+
 .case-study header > img {
   position: absolute;
   bottom: -407px;
 }
-.case-study section {
-  margin: 3.2rem 1.6rem;
-  width: 720px;
-}
+
 p[role="lead-in"] {
 font-size: 24px;
 color: #FFFFFF;
@@ -752,12 +760,14 @@ line-height: 2.4rem;
 width: 60%;
 margin-bottom: 2.4rem;
 }
+
 #close-button {
   position: fixed;
   top: calc(50% - 29px);
   right: calc(15% - 29px - 2.4rem);
   cursor: pointer;
 }
+
 #close-button > a {
   display: block;
   position: relative;
@@ -767,16 +777,29 @@ margin-bottom: 2.4rem;
   width: 72px;
   /* background-color: rgba(255,13,24,0.4); */
 }
+
 #close-button .icon {
   stroke: #FFF;
 }
+
 .case-study .credit {
   position: absolute;
   bottom: 18px;
   right: 30px;
 }
-/* end case study header */
-/* case study sections */
+/*}}} end case study header */
+
+/* case study sections {{{ */
+
+.case-study section {
+  margin: 3.2rem 1.6rem;
+  width: 720px;
+}
+
+.case-study h3 {
+  margin-bottom: 0.8rem;
+}
+
 .case-study #services {
   /* width: 100%; */
   margin: 0.8rem;
@@ -786,14 +809,28 @@ margin-bottom: 2.4rem;
   border-bottom: 1px dashed #eee;
   border-top: 1px dashed #eee;
 }
+
 .case-study #services ul {
   display: flex;
   justify-content: space-around;
 }
 
+#solution-images {
+  display: flex;
+}
+
+.solution-image {
+  flex: 1 1 100px;
+  margin: 20px 10px;
+  max-width: 100%;
+}
+
+/* }}} case study sections */
+
 /* end case studies }}}*/
 
 /* --------------------------MEDIA QUERIES-------------------------- {{{*/
+
 /* medium screen (<900px) {{{*/
 @media only screen and (max-width: 900px) {
 /* For mobile phones: */
@@ -802,91 +839,113 @@ margin-bottom: 2.4rem;
   padding: 20px;
   height: 100%;
 }
+
 h1{
   font-size: 4rem;
   letter-spacing: -.25rem;
   line-height: 3.3rem;
   opacity: var(--mobile-hide);
 }
+
 .button{
   opacity: var(--mobile-hide);
 }
+
 .button-label{
   /* font-size: 2.25rem; */
   font-size: 2rem;
   line-height: 30px;
   /* padding-top: 12px; */
 }
+
 .bar{
   --bar-width: 96px;
 }
+
 .bar: hover{
   cursor: pointer;
   --bar-width: 105px;
 }
+
 #videobar: focus{
   width: 100%;
 }
+
 .bararrowleft{
   visibility: hidden;
 }
+
 .barx{
   visibility: visible;
 }
+
 .credit{
   opacity: 0;
   z-index: -100;
 }
+
 .button-group{
   bottom: 14px;
 }
+
 .bridgerlogo{
   opacity: 0;
 }
-} /* end medium screen }}}*/
 
-/* short screen (550px) {{{*/
+} /*}}} end medium screen */
+
+/* For landscape mobile phones {{{*/
 @media only screen and (max-height: 500px) {
-/* For landscape mobile phones */
+
 h1{
   font-size: 4rem;
   letter-spacing: -.25rem;
   line-height: 3.3rem;
   opacity: var(--mobile-hide);
 }
+
 a: hover{
   margin-left: -5px;
 }
+
 #video: focus{
   --bar-width: 100%;
 }
+
 .button{
   opacity: var(--mobile-hide);
 }
+
 .button-group{
   position: absolute;
   float: right;
   right: 20px;
 }
-} /* end short screen }}}*/
+
+} /*}}} landscape mobile phone*/
 
 /* thin screen (400px) {{{*/
 @media only screen and (max-width: 400px) {
-/* For small mobile phones: */
+
 h1{
   font-size: 3.6rem;
   letter-spacing: -.25rem;
   line-height: 3rem;
   opacity: var(--mobile-hide);
 }
+
 .bar{
   --bar-width: 85px;
 }
+
 .button{
   opacity: var(--mobile-hide);
 }
+
 .content-area{
   margin-left: 10px;
 }
+
 } /* end thin screen }}}*/
+
 /* end media queries }}}*/
