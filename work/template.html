@@ -2,11 +2,11 @@
 <html lang="en" id="cs-template" class="case-study">
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="../assets/images/Bridger_Favicon.png"/>
-    <title>Consumer Product&mdash;by Bridger</title>
+
+    <title>Project Template&mdash;by Bridger</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../css/reset.css"> 
@@ -16,12 +16,12 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
     <script src="../js/main.js" defer></script>
-
+    <!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin defer></script> -->
+    <!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin defer></script> -->
+    <!-- <script src="../js/components/like_button.js" defer></script> -->
   </head>
 
   <body>
-
-
     <main role="main">
       <article role="article">
         <header role="banner">
@@ -34,14 +34,15 @@
           </nav>
           <hgroup>
             <h1>Case Study Template</h1>
-            <h2>SUBTITLE</h2>
+            <h2>Subtitle</h2>
           </hgroup>
-          <p role="lead-in" aria-roledescription="the lead-in paragraph for the case study">We helped Kimberly Clark giant into the digital age with a full website redesign. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+          <p role="lead-in" aria-roledescription="A high-level description of the project">We helped Kimberly Clark giant into the digital age with a full website redesign. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 
           <img src="../assets/images/case-studies/template/kc-image.png" alt="project header image">
         </header>
 
-        <section id="services">
+        <!-- Services -->
+        <section id="services" role="services" aria-roledescription="List of services provided on this project.">
           <!-- <h3>Services</h3> -->
           <ul>
             <li> User experience design</li>
@@ -49,17 +50,26 @@
           </ul>
         </section>
 
-        <section>
-          <p role="lead-in" aria-roledescription="the lead-in paragraph for the case study">We helped Kimberly Clark giant into the digital age with a full website redesign. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <!-- Problem statement -->
+        <section id="problem" role="problem-statement" aria-roledescription="A detailed description of the problem that we were trying to solve on this project">
           <h3>Problem</h3>
+          <p>Etiam fringilla nulla orci, in sagittis leo mollis et. Cras non maximus odio, a iaculis justo. Nunc ut eleifend velit. Sed semper gravida velit, ut rutrum turpis fringilla nec. Integer rhoncus luctus tempus. Praesent mattis volutpat nulla vitae laoreet. Maecenas in varius quam. Suspendisse suscipit sem ut arcu blandit, sed aliquet ex gravida. Curabitur auctor non orci quis cursus.</p>
         </section>
 
-        <section>
+        <!-- Solution -->
+        <section id="solution" role="solution" aria-roledescription="A description of the solution pprocess and outcome">
           <h3>Solution</h3>
+          <p>Lobortis egestas lacus non vehicula. In ornare pulvinar semper. Morbi efficitur quam quis ultrices egestas. Curabitur quis elit turpis. Nunc at ligula vel orci blandit elementum sed ut arcu. Quisque ullamcorper pretium lectus, a consequat ante efficitur vitae. Integer quis felis at arcu laoreet molestie. Curabitur mollis diam ante.</p>
+
+          <div id="solution-images">
+          </div> <!-- #solution-images -->
+
+          <p>Fusce lobortis egestas lacus non vehicula. In ornare pulvinar semper. Morbi efficitur quam quis ultrices egestas. Curabitur quis elit turpis. Nunc at ligula vel orci blandit elementum sed ut arcu. Quisque ullamcorper pretium lectus, a consequat ante efficitur vitae. Integer quis felis at arcu laoreet molestie. Curabitur mollis diam ante.</p>
         </section>
 
       <footer role="contentinfo">
-        <p class="credit"> Made in SD &amp; NY &mdash; &copy;&nbsp;2020 Bridger&nbsp;LLC </p>
+        <p class="credit"> &copy;&nbsp;2020 Bridger&nbsp;LLC </p>
+        <!-- <div id="like_button_container"> </div> -->
       </footer>
 
       </article>
