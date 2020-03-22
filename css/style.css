@@ -184,7 +184,7 @@ p {
   top: 20px;
   opacity: 1;
   position: fixed;
-  transition: opacity .3s;
+  transition: opacity .3s, visibility 0s linear .3s;
   z-index: 900;
 }
 .bridgerlogo:hover, .bridgerlogo:focus {
@@ -888,8 +888,9 @@ h1{
   bottom: 14px;
 }
 
-.bridgerlogo{
+.bridgerlogo:not(#footer-logo){
   opacity: 0;
+  visibility: hidden;
 }
 
 } /*}}} end medium screen */
