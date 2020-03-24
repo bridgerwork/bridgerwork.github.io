@@ -49,6 +49,7 @@ html {
   font-size: 16px;
   width: 100vw;
   height: 100%;
+  cursor: url(./cursors/normal.svg) 8 7, auto;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -59,6 +60,10 @@ body {
   padding: 20px;
   height: 100%; 
   width: 100%;
+  cursor: url(./cursors/normal.svg) 8 7, auto;
+}
+blockquote, dl, dt, figcaption, address, p, pre, h1, h2, h3, h4, h5, h6 {
+  cursor: url(./cursors/text.svg) 30 30, auto;
 }
 .content-area{
   display: flex;
@@ -149,7 +154,7 @@ p {
 .button{
   border-radius: 20px;
   padding: 10px;
-  cursor: pointer;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
   display: flex;
   align-items: center;
   background-color: hsla(var(--link-alpha));
@@ -158,6 +163,15 @@ p {
 .button:hover, .button:focus {
   background-color: hsla(var(--link-hover-alpha));
   transition: background-color .3s;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
+}
+a:hover, a:visited {
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
+}
+.project>.button:hover, .button:focus {
+  background-color: hsla(var(--link-hover-alpha));
+  transition: background-color .3s;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
 .button-label{
   text-align: left;
@@ -190,6 +204,7 @@ p {
   width: 87px;
   right: 29px;
   top: 19px;
+  cursor: url(./cursors/pointer-lh.svg) 39 9, pointer;
 }
 .bridgerlogoletters{
   fill: var(--logo-letter-color);
@@ -215,7 +230,7 @@ p {
   transition: width .25s, background-color .5s;
 }
 .bar:hover, .bar:focus {
-  cursor: pointer;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
   --bar-width: 125px;
   background: hsl(15, 100%, 48%);
 }
@@ -302,7 +317,7 @@ p {
 .barx:hover, .barx:focus {
   /* width: 50px; */
   stroke: hsla(0,100%,100%,100%);
-  cursor: pointer;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
 .bararrowleft{
   fill: none;
@@ -322,7 +337,7 @@ p {
 }
 .bararrowleft:hover, .bar:focus .bararrowleft {
   margin-left: 0px;
-  cursor: pointer;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
   background-color: hsla(20,50%,95%,20%);
 }
 /* end bar closing }}}*/
@@ -342,7 +357,7 @@ p {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  cursor: pointer;
+  cursor: url(./cursors/pointer-lh.svg) 39 9, pointer;
   transition: opacity .5s;
 }
 #innercircle{
@@ -371,7 +386,7 @@ p {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   transition: width .3s, height .3s, opacity .3s;
-  cursor: pointer;
+  cursor: url(./cursors/pointer-lh.svg) 39 9, pointer;
   opacity: 1;
 }
 /* end color control circle }}}*/
@@ -400,7 +415,9 @@ p {
   padding-left: 5px;
   padding-right: 3px;
   border-left: 4px solid hsl(15, 100%, 55%);
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
+
 article{
   display: inline-block;
   width: calc(100% - var(--bar-width) - 2*var(--bar-margin));
@@ -481,6 +498,7 @@ article > section {
 }
 .social-link:hover, .social-link:focus {
   text-decoration: underline;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
 address{
    line-height: 1.2rem;
@@ -574,6 +592,7 @@ address > section:first-child {
   flex-direction: column;
   align-items: start;
   width: 100%;
+  margin: -10px;
 }
 .button > .button {
   background: none;
@@ -621,6 +640,7 @@ address > section:first-child {
 #services-list > li {
   min-width: 330px;
   max-width: 660px;
+  cursor: url(./cursors/text.svg) 30 30, auto;
 }
 @media only screen and (max-width: 812px) {
   #services-list > li {
@@ -699,6 +719,7 @@ address > section:first-child {
   padding: 0;
   background: none;
   opacity: 1;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
 .first-name {
   position: absolute;
@@ -707,6 +728,7 @@ address > section:first-child {
 .team-member:hover .first-name, .team-member:focus .first-name {
   left: 1rem;
   top: 0;
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
 .last-name {
   position: absolute;
@@ -715,6 +737,7 @@ address > section:first-child {
 .team-member:hover .last-name, .team-member:focus .last-name {
   right: 1rem;
   top: calc(100% - 5.6rem);
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
 }
 /* end name }}} */
 
@@ -732,6 +755,9 @@ address > section:first-child {
 /* --------------------------CASE STUDIES------------------------------- {{{*/
 
 /* case study container {{{ */
+.case-study, .case-study *{
+  cursor: url(./cursors/close.svg) 30 30, sw-resize;
+}
 
 .case-study body{
    background-color: #eee;
@@ -819,23 +845,18 @@ margin-bottom: 2.4rem;
 
 #close-button {
   position: fixed;
-  top: calc(50% - 29px);
-  right: calc(15% - 29px - 2.4rem);
-  cursor: pointer;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  cursor: url(./cursors/close.svg) 30 30, sw-resize;
 }
 
 #close-button > a {
   display: block;
-  position: relative;
-  top: -66px;
-  left: -6px;
-  height: 72px;
-  width: 72px;
-  /* background-color: rgba(255,13,24,0.4); */
-}
-
-#close-button .icon {
-  stroke: #FFF;
+  padding: 1.4rem;
+  height: 48px;
+  width: 48px;
+  cursor: url(./cursors/pointer-lh.svg) 39 9, pointer;
 }
 
 .case-study .credit {
@@ -861,6 +882,7 @@ h3 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 1.6rem;
+  display: none;
 }
 
 .case-study #services {
@@ -888,6 +910,7 @@ hr {
 
 .details {
   display: flex;
+  justify-content: center;
 }
 .details .text {
   max-width: 300px;
@@ -949,12 +972,13 @@ h1{
   --bar-width: 96px;
 }
 
-.bar: hover{
-  cursor: pointer;
+.bar:hover{
+  cursor: url(./cursors/pointer.svg) 8 7, pointer;
   --bar-width: 105px;
 }
 
-#videobar: focus{
+#videobar:focus{
+  cursor: url(./cursors/pointer.svg) 21 8, pointer;
   width: 100%;
 }
 
@@ -984,11 +1008,13 @@ h1{
   opacity: var(--mobile-hide);
 }
 
-a: hover{
+a:hover{
   margin-left: -5px;
+  cursor: url(./cursors/pointer.svg) 21 8, pointer;
 }
 
-#video: focus{
+#video:focus{
+  cursor: url(./cursors/pointer.svg) 21 8, pointer;
   --bar-width: 100%;
 }
 
