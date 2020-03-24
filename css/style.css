@@ -70,6 +70,12 @@ blockquote, dl, dt, figcaption, address, p, pre, h1, h2, h3, h4, h5, h6 {
   float: left;
   flex-direction: column;
 }
+.circle,  {
+  user-select: none;
+}
+/* #landing { */
+/*   user-select: none; */
+/* } */
 #landing .credit {
   position: fixed;
   right: 30px;
@@ -388,6 +394,7 @@ a:hover, a:visited {
   transition: width .3s, height .3s, opacity .3s;
   cursor: url(./cursors/pointer-lh.svg) 39 9, pointer;
   opacity: 1;
+  user-select: none;
 }
 /* end color control circle }}}*/
 /* end landing page }}}*/
