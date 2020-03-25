@@ -27,6 +27,30 @@ function getWindowDimensions() {
   return {width: width, height: height};
 }
 
+function setHeadingText() {
+  const heading = document.querySelector('h1');
+
+  let headings = [
+    "We design<br>digital<br>products",
+    "We've got<br>a killer<br>backhand",
+    "We can<br>do that,<br> too",
+    "Don't worry.<br>We're here<br>for you",
+    "Branding,<br>motion,<br>product"
+  ];
+
+  let min = 0;
+  let max = headings.length;
+  let i = Math.floor(Math.random() * (max - min)) + min;
+
+  if ( headings.innerHTML !== headings[i]) {
+    heading.innerHTML = headings[i];
+  } else {
+    i = (i + 1) % headings.length;
+     heading.innerHTML = heading[i];
+  }
+}
+
+
 function setHeadingSize() {
   let wDimensions = getWindowDimensions();
   const root = document.querySelector(':root');
@@ -73,6 +97,8 @@ if ( document.querySelector("#landing")) {
 
   // Change the theme when circlehitbox is clicked
   $("html").on('click',"#circlehitbox",function() {
+    setHeadingText();
+
     pick = (pick + 1)%4;
     console.log(pick);
     $("html").removeAttr("style");
