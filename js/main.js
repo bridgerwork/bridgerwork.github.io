@@ -5,6 +5,60 @@
     $(".button-group").css("opacity","1");
   });
 
+
+function getWindowDimensions() {
+  const doc = document;
+  const w = window;
+  // check browser compatibility
+  const docEl =  (doc.compatMode && doc.compatMode === 'CSS1Compat') ? doc.documentElement : doc.body;
+
+  var width = docEl.clientWidth;
+  var height = docEl.clientHeight;
+
+  // check mobile zoom
+  if ( w.innerWidth && width > w.innerWidth ) {
+    width = w.innerWidth;
+    height = w.innerHeight;
+  }
+
+  // console.log( "width: ", width );
+  // console.log( "height: ", height );
+
+  return {width: width, height: height};
+}
+
+function setHeadingSize() {
+  let wDimensions = getWindowDimensions();
+  const root = document.querySelector(':root');
+  const heading = document.querySelector('h1');
+
+  let bodyStyles = window.getComputedStyle(document.body);
+  let margins = parseInt(bodyStyles.getPropertyValue('padding-left')) + parseInt(bodyStyles.getPropertyValue('padding-right'));
+
+  let barStyles = window.getComputedStyle(document.querySelector(".bar"));
+  let barWidth = parseInt(barStyles.getPropertyValue('width')) + parseInt(barStyles.getPropertyValue('margin-right'));
+
+  let navStyles = window.getComputedStyle(document.querySelector('.button-group'));
+  let navHeight = parseInt(navStyles.getPropertyValue('height'));
+
+  let liveWidth = wDimensions.width - barWidth - margins;
+  let liveHeight = wDimensions.height - margins - navHeight;
+
+  let fsFactor =  liveHeight > 300 ? Math.min(liveWidth/80, liveHeight/46) : parseInt(heading.style.getProperty('height'));
+  let lsFactor = -fsFactor/16;
+
+  console.log( 'w:' + liveWidth + '; fs:' + fsFactor + '; h:' + liveHeight );
+  heading.style.setProperty('font-size', fsFactor + 'rem');
+  heading.style.setProperty('line-height', 0.8*fsFactor + 'rem');
+  heading.style.setProperty('letter-spacing', lsFactor + 'rem')
+  heading.style.setProperty('transition', '');
+}
+
+window.addEventListener("DOMContentLoaded", setHeadingSize, false);
+window.addEventListener("resize", setHeadingSize, false);
+
+
+
 /* LANDING PAGE */
 if ( document.querySelector("#landing")) {
   // console.log( "on the landing page" );
