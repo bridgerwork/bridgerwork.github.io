@@ -6,14 +6,18 @@
   });
 
 
+/**
+ * @description Calculates the width and height of the window
+ * @returns {array}  Width and height (w,h) of window
+ */
 function getWindowDimensions() {
   const doc = document;
   const w = window;
   // check browser compatibility
   const docEl =  (doc.compatMode && doc.compatMode === 'CSS1Compat') ? doc.documentElement : doc.body;
 
-  var width = docEl.clientWidth;
-  var height = docEl.clientHeight;
+  let width = docEl.clientWidth;
+  let height = docEl.clientHeight;
 
   // check mobile zoom
   if ( w.innerWidth && width > w.innerWidth ) {
@@ -21,16 +25,17 @@ function getWindowDimensions() {
     height = w.innerHeight;
   }
 
-  // console.log( "width: ", width );
-  // console.log( "height: ", height );
-
   return {width: width, height: height};
 }
 
+/**
+ * @description Display a random heading when the page theme is changed
+ */
 function setHeadingText() {
   const heading = document.querySelector('h1');
 
-  let headings = [
+  // TODO: make lines interchangeable
+  const headings = [
     "We design<br>digital<br>products",
     "We've got<br>a killer<br>backhand",
     "We can<br>do that,<br> too",
@@ -38,8 +43,8 @@ function setHeadingText() {
     "Branding,<br>motion,<br>product"
   ];
 
-  let min = 0;
-  let max = headings.length;
+  const min = 0;
+  const max = headings.length;
   let i = Math.floor(Math.random() * (max - min)) + min;
 
   if ( headings.innerHTML !== headings[i]) {
@@ -50,25 +55,32 @@ function setHeadingText() {
   }
 }
 
-
+/**
+* @description Changes the font size and linespacing of the heading when the space around it changes size
+*/
 function setHeadingSize() {
   let wDimensions = getWindowDimensions();
   const root = document.querySelector(':root');
   const heading = document.querySelector('h1');
 
+  // get the margins + padding of the body
   let bodyStyles = window.getComputedStyle(document.body);
   let margins = parseInt(bodyStyles.getPropertyValue('padding-left')) + parseInt(bodyStyles.getPropertyValue('padding-right'));
 
+  // get the width of the bar + it's margin
   let barStyles = window.getComputedStyle(document.querySelector(".bar"));
   let barWidth = parseInt(barStyles.getPropertyValue('width')) + parseInt(barStyles.getPropertyValue('margin-right'));
 
+  // get the height of the nav buttons
   let navStyles = window.getComputedStyle(document.querySelector('.button-group'));
   let navHeight = parseInt(navStyles.getPropertyValue('height'));
 
+  // 'live' = available space for the heading
   let liveWidth = wDimensions.width - barWidth - margins;
   let liveHeight = wDimensions.height - margins - navHeight;
 
-  let fsFactor =  liveHeight > 300 ? Math.min(liveWidth/80, liveHeight/46) : parseInt(heading.style.getProperty('height'));
+  // change the factor for font size and letter spacing
+  let fsFactor =  liveHeight > 300 ? Math.min(liveWidth/88, liveHeight/46) : parseInt(heading.style.getProperty('height'));
   let lsFactor = -fsFactor/16;
 
   console.log( 'w:' + liveWidth + '; fs:' + fsFactor + '; h:' + liveHeight );
@@ -76,33 +88,38 @@ function setHeadingSize() {
   heading.style.setProperty('line-height', 0.8*fsFactor + 'rem');
   heading.style.setProperty('letter-spacing', lsFactor + 'rem')
   heading.style.setProperty('transition', '');
+  // heading.style.setProperty('transition', 'font-size .1s, line-height .1s, letter-spacing .1s');
 }
-
-window.addEventListener("DOMContentLoaded", setHeadingSize, false);
-window.addEventListener("resize", setHeadingSize, false);
-
-
 
 /* LANDING PAGE */
 if ( document.querySelector("#landing")) {
+  window.addEventListener("load", setHeadingSize, false);
+  window.addEventListener("resize", setHeadingSize, false);
+
+  let bars = document.querySelectorAll('.bar');
+  for ( let i = 0; i < bars.length; i++ ) {
+    bars[i].addEventListener("transitionstart", setHeadingSize, false);
+    bars[i].addEventListener("transitionrun", setHeadingSize, false);
+    bars[i].addEventListener("transitionend", setHeadingSize, false);
+  }
+
   // console.log( "on the landing page" );
-  var pick = 0;
-  var circledime = 115;
+  let pick = 0;
+  let circledime = 115;
   // Load landing page and initialize theme
   window.onload = function genesis() {
-    var element = document.getElementById("landing");
+    let element = document.getElementById("landing");
     element.classList.toggle('theme' + pick);
     $(".theme0").css("--circle-color","hsl(0, 0%, 10%)");
   } 
 
   // Change the theme when circlehitbox is clicked
   $("html").on('click',"#circlehitbox",function() {
-    setHeadingText();
 
     pick = (pick + 1)%4;
     console.log(pick);
     $("html").removeAttr("style");
-    var element = document.getElementById("landing");
+    let element = document.getElementById("landing");
     while(element.classList.length) {
       element.classList.remove(element.classList.item(0));
     }
@@ -123,6 +140,7 @@ if ( document.querySelector("#landing")) {
       $("#innercircle").css("border-bottom-left-radius",""+(circledime)+"vh");
       $("#innercircle").css("visibility","visible");
     }
+    setHeadingText();
   });
 
   // move the control circle when user clicks on the hitbox
@@ -149,39 +167,39 @@ if ( document.querySelector("#landing")) {
 
   // vary the page color as the mouse moves: theme0
   $("html").mousemove(function(){
-    var value1 = event.pageX/90 + 40;
-    var value2 = event.pageY/60 + 90;
-    var color = "hsl("+(value1)+","+(value2)+"%,54%";
+    let value1 = event.pageX/90 + 40;
+    let value2 = event.pageY/60 + 90;
+    let color = "hsl("+(value1)+","+(value2)+"%,54%";
     $(".theme0").css("background-color",color);
   });
 
   // vary the page color as the mouse moves: theme1
   $("html").mousemove(function(){
-    var value1 = event.pageX/80 +0;
-    var value2 = event.pageY/60 +5;
-    var color = "hsl(45,"+(value1)+"%,"+(value2)+"%";
+    let value1 = event.pageX/80 +0;
+    let value2 = event.pageY/60 +5;
+    let color = "hsl(45,"+(value1)+"%,"+(value2)+"%";
     $(".theme1").css("background-color",color);
   });
 
   // vary the page color as the mouse moves: theme2
   $("html").mousemove(function(){
-    var value1 = event.pageX/90 +190;
-    var value2 = event.pageY/60 + 90;
-    var color = "hsl("+(value1)+","+(value2)+"%,53%";
+    let value1 = event.pageX/90 +190;
+    let value2 = event.pageY/60 + 90;
+    let color = "hsl("+(value1)+","+(value2)+"%,53%";
     $(".theme2").css("background-color",color);
   });
 
   // vary the page color as the mouse moves: theme3
   $("html").mousemove(function(){
-    var value1 = event.pageX/80 +45;
-    var value2 = event.pageY/60 + 90;
-    var color = "hsl("+(value1)+","+(value2)+"%,"+(value2)+"%";
+    let value1 = event.pageX/80 +45;
+    let value2 = event.pageY/60 + 90;
+    let color = "hsl("+(value1)+","+(value2)+"%,"+(value2)+"%";
     $(".theme3").css("background-color",color);
   });
 
   // play video and hide some page elements when focus is moved to bar
   $("html").on('focus','#videobar',function() {
-    var myvideo = $("#reel").get(0);
+    let myvideo = $("#reel").get(0);
     myvideo.play();
     $("#reel").css("opacity","1");
     $("#controlcircle").css("width","10");
@@ -190,13 +208,15 @@ if ( document.querySelector("#landing")) {
     $(".barx").css("opacity","1");
     $("#landing").css("--mobile-hide","0");
     $('$content-area').hide().show(0);
+    $("#videobar").css("width", "60%");
   });
 
   // When focus leave the bar
   $("html").on('focusout','#videobar',function() {
-    var myvideo = $("#reel").get(0);
+    let myvideo = $("#reel").get(0);
     myvideo.pause();
     $("#reel").css("opacity","0.09");
+    $(".videobar").css("width", "120px");
     $("#controlcircle").css("width","50%");
     $(".bar").css("background","hsla(15, 100%, 55%, 100%)");
     $(".bariconarrow").css("visibility","visible");
@@ -224,10 +244,6 @@ if ( document.querySelector("#landing")) {
 
 
   $("html").on('mouseover','#circlehitbox',function() {
-    // $(".theme0").css("--circle-color","hsl(0,0%,10%)");
-    // $(".theme1").css("--circle-color","hsl(197, 100%, 53%)");
-    // $(".theme2").css("--circle-color","hsl(45,100%,98%)");
-    // $(".theme3").css("--circle-color","hsl(45,100%,54%)");
 
     if ($(window).width() > 800) {
       $(".circle").css("width","75px");
