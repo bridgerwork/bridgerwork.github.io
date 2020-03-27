@@ -804,7 +804,7 @@ address > section:first-child {
   align-items: center;
   background-color: white;
   border-radius: 3px;
-  box-shadow: 0 0 1.6rem rgba(0,0,0,0.1);
+  box-shadow: 0 0 1.6rem hsla(0 0% 0% / 0.1);
   overflow: hidden;
 }
 
@@ -819,6 +819,7 @@ address > section:first-child {
 
 /* case study header {{{ */
 .case-study header {
+  width: 100%;
   display: block;
   position: relative;
 }
@@ -838,6 +839,13 @@ address > section:first-child {
   top: -1rem;
   left: calc(100% - 3.2rem);
   transform: rotate(90deg);
+}
+
+.case-study .client-logo {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 2.4rem;
 }
 
 .case-study .title, .case-study .subtitle {
@@ -861,8 +869,9 @@ address > section:first-child {
   padding-top: 2.4rem;
 }
 
-.case-study header img {
+.case-study #intro-image {
    margin-bottom: -380px;
+   width: 80%;
 }
 
 p[role="lead-in"] {
@@ -887,6 +896,11 @@ margin-bottom: 2.4rem;
   cursor: url(./cursors/pointer-lh.svg) 39 5, pointer;
 }
 
+#close-button svg > path {
+  fill: hsla(0 0% 90% / 0.4);
+  stroke: hsla(0 0% 3% / 0.4);
+}
+
 .case-study .credit {
   position: absolute;
   bottom: 18px;
@@ -897,7 +911,7 @@ margin-bottom: 2.4rem;
 /* case study sections {{{ */
 
 .case-study section {
-  margin: 3.2rem 1.6rem;
+  margin: 1.6rem;
 }
 
 .case-study section p {
@@ -907,10 +921,9 @@ margin-bottom: 2.4rem;
 }
 
 h3 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1.6rem;
-  display: none;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .case-study #services {
@@ -931,14 +944,13 @@ hr {
 }
 
 #problem {
-  width: 100%;
   background: #f6f6f6;
-  padding: 1.6rem;
 }
 
 .details {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .details .text {
   max-width: 300px;
@@ -955,22 +967,91 @@ hr {
   width: 50%;
 }
 
-#solution-images {
+section[role="solution"], section[role="problem"] {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.6rem;
+
+}
+.details {
+
+}
+.solution-images {
+  display: flex;
   flex-direction: column;
 }
-#solution-images img:first-child {
-  width: 100%;
-}
-#solution-images .row-two {
+.solution-images .two-up {
   display: flex;
+  flex-direction: row;
 }
-#solution-images .row-two img {
+.solution-images .two-up img {
   width: 50%;
 }
 
-/* }}} case study sections */
+/* Tiled case study {{{ */
+#tiled-intro {
+  background-color: black;
+  margin-bottom: 340px;
+}
+#tiled .left-title {
+  bottom: 360px;
+}
+#tiled #intro-image {
+   margin-top: 2rem;
+   margin-bottom: -320px;
+   width: 80%;
+}
+#tiled h3 {
+  display: block;
+}
+
+#tiled hr {
+  color: #1C85FF;
+  border-color: #1C85FF;
+}
+#tiled-solution {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  width: 100%;
+}
+#tiled-solution .details {
+  display: inline-block;
+}
+#tiled #close-button svg > path {
+  stroke: hsl(212.2,100%,55.5%);
+  fill: hsla(0 0% 90% / 0.4);
+}
+#tiled-solution-images img {
+  object-fit: contain;
+}
+#tiled-solution-images {
+  position: relative;
+}
+#tiled-solution-images #solution-img-01 {
+  width: 100%;
+  padding-left: 5%;
+}
+#tiled-solution-images #solution-img-02 {
+  position: absolute;
+  width: 70%;
+  right: 35%;
+  top: 45%;
+}
+
+/* }}} Tiled */
+
+/* Adobe case study {{{ */
+
+/* Adobe }}}*/
+
+/* Consumer case study {{{ */
+
+/* Consumer }}}*/
 
 /* end case studies }}}*/
+/* }}} case study sections */
 
 /* --------------------------MEDIA QUERIES-------------------------- {{{*/
 
