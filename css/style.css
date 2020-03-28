@@ -314,7 +314,9 @@ a:hover, a:visited {
 }
 #videobar:focus{
   width: 60%;
-  
+}
+#videobar::after {
+  content: url("../assets/images/icons/arrow_left.svg")
 }
 #reel{
   position: relative;
@@ -854,7 +856,7 @@ address > section:first-child {
   line-height: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  cursor: url(./cursors/text-vert.svg) 13 26, vertical-text;
+  cursor: url(./cursors/text-vert.svg) 26 13, vertical-text;
 }
 
 .case-study .intro {
@@ -900,7 +902,9 @@ margin-bottom: 2.4rem;
   fill: hsla(0 0% 90% / 0.4);
   stroke: hsla(0 0% 3% / 0.4);
 }
-
+#view-solution {
+  margin-left: -10px;
+}
 .case-study .credit {
   position: absolute;
   bottom: 18px;
@@ -970,11 +974,9 @@ hr {
 section[role="solution"], section[role="problem"] {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 1.6rem;
-
-}
-.details {
+  padding: 0 1.6rem;
 
 }
 .solution-images {
@@ -1015,6 +1017,7 @@ section[role="solution"], section[role="problem"] {
   flex-direction: row-reverse;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 5.6rem;
 }
 #tiled-solution .details {
   display: inline-block;
@@ -1031,13 +1034,13 @@ section[role="solution"], section[role="problem"] {
 }
 #tiled-solution-images #solution-img-01 {
   width: 100%;
-  padding-left: 5%;
+  margin-left: 20px;
 }
 #tiled-solution-images #solution-img-02 {
   position: absolute;
-  width: 70%;
-  right: 35%;
-  top: 45%;
+  width: 60%;
+  right: 45%;
+  top: 55%;
 }
 
 /* }}} Tiled */
