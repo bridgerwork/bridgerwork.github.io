@@ -1,0 +1,12 @@
+{
+  "name": "bridger.work",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/bridgerwork/bridgerwork.github.io",
+  "author": "Bridger, LLC",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "eslint": "^6.8.0"
+  }
+}
