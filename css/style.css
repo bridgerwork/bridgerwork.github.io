@@ -4,8 +4,19 @@
   --link-hover-alpha: 20,50%,95%,20%;
   --bar-width: 120px;
   --bar-margin: 20px;
-  --heading-multiplier: calc(1vw/88);
   --heading-size: 12rem;
+  --bridger-orange: hsl(15, 100%, 55%);
+  --black: #1a1a1a;
+  --white: #fff;
+  /* case study variables */
+  --cs-primary-color: var(--bridger-orange);
+  --cs-background: #0F049F;
+  --cs-intro-margin: 420px;
+  --cs-problem-color: #f6f6f6;
+  fill: hsla(0 0% 90% / 0.4);
+  stroke: hsla(0 0% 3% / 0.4);
+  --button-stroke: hsl(212.2 100% 55.5% / 1);
+  --button-fill: hsla(0 0% 90% / 0.4);
 }
 @media only screen and ( max-width: 1056px) {
   :root {
@@ -32,35 +43,35 @@
 /* --------------------------GLOBAL STYLES-------------------------- {{{*/
 /* Page themes {{{*/
 .theme0{
-  color: #1A1A1A;
+  color: var(--black);
   background-color: hsla(45,100%,54%,100%);
-  stroke: #1A1A1A;
+  stroke: var(--black);
   --circle-color: hsl(45,100%,54%);
-  --logo-letter-color: #1A1A1A;
+  --logo-letter-color: var(--black);
 }
 .theme1{
-  color: #FFF;
-  fill: #FFF;
+  color: var(--white);
+  fill: var(--white);
   background-color: hsl(0, 0%, 10%);
-  stroke: #FFF;
+  stroke: var(--white);
   --circle-color: hsl(0, 0%, 10%);
-  --logo-letter-color: #FFF;
+  --logo-letter-color: var(--white);
 }
 .theme2{
-  color: #1A1A1A;
-  stroke: #1A1A1A;
+  color: var(--black);
+  stroke: var(--black);
   background-color: hsl(197, 100%, 53%);
   --circle-color: hsl(197, 100%, 53%);
-  --logo-letter-color: #1A1A1A;
+  --logo-letter-color: var(--black);
 } 
 .theme3{
-  color: #1A1A1A;
-  stroke: #1A1A1A;
+  color: var(--black);
+  stroke: var(--black);
   background-color: hsl(45,100%,98%);
   --circle-color: hsl(45,100%,98%);
   --link-alpha: 15, 10%, 55%, 0%;
   --link-hover-alpha: 15, 10%, 55%, 10%;
-  --logo-letter-color: #1A1A1A;
+  --logo-letter-color: var(--black);
 }
 /* end page themes }}}*/
 
@@ -238,7 +249,7 @@ a:hover, a:visited {
   stroke: none;
 }
 .bridgerlogobar{
-  fill: hsl(15, 100%, 55%);
+  fill: var(--bridger-orange);
   stroke: none;
 }
 /* end logo }}}*/
@@ -276,7 +287,7 @@ a:hover, a:visited {
   transition-delay: width .8s;
 }
 .baricon{
-  stroke: #1A1A1A;
+  stroke: var(--black);
   fill: none;
   transition: opacity .5s;
 }
@@ -828,18 +839,10 @@ address > section:first-child {
 
 .case-study hgroup {
   position: absolute;
+  top: -1rem;
+  left: 1rem;
   width: 300px;
   transform-origin: bottom left;
-}
-.case-study hgroup.left-title {
-  left: 3.2rem;
-  bottom: calc(420px + 1rem);
-  transform: rotate(-90deg);
-}
-
-.case-study hgroup.right-title {
-  top: -1rem;
-  left: calc(100% - 3.2rem);
   transform: rotate(90deg);
 }
 
@@ -866,13 +869,13 @@ address > section:first-child {
   justify-content: center;
   min-height: 480px;
   width: 100%;
-  background-color: #0F049F;
-  margin-bottom: 420px;
+  background: var(--cs-background);
+  margin-bottom: var(--cs-intro-margin);
   padding-top: 2.4rem;
 }
 
 .case-study #intro-image {
-   margin-bottom: -380px;
+   margin: 2rem 0 calc(-1 * var(--cs-intro-margin));
    width: 80%;
 }
 
@@ -899,8 +902,8 @@ margin-bottom: 2.4rem;
 }
 
 #close-button svg > path {
-  fill: hsla(0 0% 90% / 0.4);
-  stroke: hsla(0 0% 3% / 0.4);
+  stroke: var(--button-stroke);
+  fill: var(--button-fill);
 }
 #view-solution {
   margin-left: -10px;
@@ -942,118 +945,63 @@ h3 {
   letter-spacing: 1px;
   color: white;
 }
-hr {
-  border: 1px solid #22d;
+.case-study hr {
+  color: var(--cs-primary-color);
+  border-color: var(--cs-primary-color);
   width: 25%;
-}
-
-#problem {
-  background: #f6f6f6;
 }
 
 .details {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-.details .text {
-  max-width: 300px;
-  margin-right: 2.4rem;
-}
-.details .images {
-  display: flex;
-  max-width: 560px;
+  align-items: start;
+  max-width: 40%;
+  margin: 1.6rem;
 }
 
 .images img{
-  max-height: 300px;
-  object-fit: cover;
-  width: 50%;
+  max-height: 320px;
 }
 
 section[role="solution"], section[role="problem"] {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 0 1.6rem;
-
-}
-.solution-images {
-  display: flex;
-  flex-direction: column;
-}
-.solution-images .two-up {
-  display: flex;
-  flex-direction: row;
-}
-.solution-images .two-up img {
-  width: 50%;
-}
-
-/* Tiled case study {{{ */
-#tiled-intro {
-  background-color: black;
-  margin-bottom: 340px;
-}
-#tiled .left-title {
-  bottom: 360px;
-}
-#tiled #intro-image {
-   margin-top: 2rem;
-   margin-bottom: -320px;
-   width: 80%;
-}
-#tiled h3 {
-  display: block;
-}
-
-#tiled hr {
-  color: #1C85FF;
-  border-color: #1C85FF;
-}
-#tiled-solution {
-  display: flex;
-  flex-direction: row-reverse;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 5.6rem;
+  padding: 1.6rem;
+  margin-bottom: 2.4rem;
 }
-#tiled-solution .details {
-  display: inline-block;
+section[role="problem"] {
+  background: var(--cs-problem-color);
 }
-#tiled #close-button svg > path {
-  stroke: hsl(212.2,100%,55.5%);
-  fill: hsla(0 0% 90% / 0.4);
-}
-#tiled-solution-images img {
-  object-fit: contain;
-}
-#tiled-solution-images {
-  position: relative;
-}
-#tiled-solution-images #solution-img-01 {
-  width: 100%;
-  margin-left: 20px;
-}
-#tiled-solution-images #solution-img-02 {
-  position: absolute;
-  width: 60%;
-  right: 45%;
-  top: 55%;
+section[role="solution"] {
+  flex-direction: row-reverse;
 }
 
-/* }}} Tiled */
-
-/* Adobe case study {{{ */
-
-/* Adobe }}}*/
-
-/* Consumer case study {{{ */
-
-/* Consumer }}}*/
-
-/* end case studies }}}*/
+/* case study variables {{{ */
+#adobe {
+  --cs-background: var(--black);
+  --cs-primary-color: #1C85FF;
+  --cs-intro-margin: 340px;
+  --button-stroke: hsl(212.2 100% 55.5% / 1);
+  --button-fill: hsla(0 0% 90% / 0.4);
+}
+#tiled {
+  --cs-background: var(--black);
+  --cs-primary-color: #1C85FF;
+  --cs-intro-margin: 340px;
+  --button-stroke: hsl(212.2 100% 55.5% / 1);
+  --button-fill: hsla(0 0% 90% / 0.4);
+}
+#paper {
+  --cs-background: var(--black);
+  --cs-primary-color: #1C85FF;
+  --cs-intro-margin: 340px;
+  --button-stroke: hsl(212.2 100% 55.5% / 1);
+  --button-fill: hsla(0 0% 90% / 0.4);
+}
+/* case study variables}}}*/
 /* }}} case study sections */
 
 /* --------------------------MEDIA QUERIES-------------------------- {{{*/
@@ -1126,7 +1074,7 @@ a:hover{
 }
 
 #video:focus{
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/close.svg) 30 30, pointer;
   --bar-width: 100%;
 }
 
