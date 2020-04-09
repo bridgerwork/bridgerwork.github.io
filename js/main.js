@@ -265,6 +265,13 @@ if ( document.querySelector("#landing")) {
   });
 }
 
+/* SECONDARY PAGES */
+if ( document.querySelector(".secondary-page")) {
+  window.addEventListener("load", setHeadingSize, false);
+  window.addEventListener("resize", setHeadingSize, false);
+}
+/* end secondary pages */
+
 /* WORKS PAGE */
 /* end works page */
 
