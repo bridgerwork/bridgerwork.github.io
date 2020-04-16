@@ -4,9 +4,9 @@ Code repo for the Bridger site
 
 ## How to run the site on your local machine
 
-1. Clone or download this repo
-2. Open index.html in your browser of choice
-3. Enjoy with a cool beverage.
+1. It's on the web, so just point your browser to
+   [bridger.work](https://bridger.work); it'll know what to do.
+2. Enjoy with a cool beverage.
 
 ## Reporting issues on github
 
@@ -20,4 +20,5 @@ It's fairly intuitive. If you see something that needs a'fixin, have an idea, or
 If you want to get into the code, or make updates to content, then create a new branch, make your changes, and then open a pull request.
 If you don't know what any of that means, then talk to jeff, read some [guides](https://guides.github.com), or watch some [videos](https://www.youtube.com/user/GitHubGuides/featured).
 
+---
 Thank you. Come again.
