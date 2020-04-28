@@ -1,9 +1,9 @@
 /* GLOBAL */
-  // fade in page elements on load
-  $(document).ready(function() {
-    $("h1").css("opacity","1");
-    $(".button-group").css("opacity","1");
-  });
+// fade in page elements on load
+$(document).ready(function() {
+  $("h1").css("opacity","1");
+  $(".button-group").css("opacity","1");
+});
 
 
 /**
@@ -34,7 +34,6 @@ function getWindowDimensions() {
 function setHeadingText() {
   const heading = document.querySelector('h1');
 
-  // TODO: make lines interchangeable
   const headings = [
     "We design<br>digital<br>products",
     "We've got<br>a killer<br>backhand",
@@ -51,7 +50,7 @@ function setHeadingText() {
     heading.innerHTML = headings[i];
   } else {
     i = (i + 1) % headings.length;
-     heading.innerHTML = heading[i];
+    heading.innerHTML = heading[i];
   }
 }
 
@@ -60,7 +59,6 @@ function setHeadingText() {
 */
 function setHeadingSize() {
   let wDimensions = getWindowDimensions();
-  const root = document.querySelector(':root');
   const heading = document.querySelector('h1');
 
   // get the margins + padding of the body
@@ -80,21 +78,28 @@ function setHeadingSize() {
   let liveHeight = wDimensions.height - margins - navHeight;
 
   // change the factor for font size and letter spacing
-  let fsFactor =  liveHeight > 300 ? Math.min(liveWidth/88, liveHeight/46) : parseInt(heading.style.getProperty('height'));
+  let hReducer = heading.className === 'secondary-title'
+    ? 160
+    : 132;
+  console.log( hReducer );
+
+  let fsFactor =  liveHeight > 300 
+    ? Math.max(Math.min(liveWidth/hReducer, liveHeight/46), 4)
+    : parseInt(heading.style.getProperty('height'));
   let lsFactor = -fsFactor/16;
 
-  console.log( 'w:' + liveWidth + '; fs:' + fsFactor + '; h:' + liveHeight );
-  heading.style.setProperty('font-size', fsFactor + 'rem');
-  heading.style.setProperty('line-height', 0.8*fsFactor + 'rem');
-  heading.style.setProperty('letter-spacing', lsFactor + 'rem')
-  heading.style.setProperty('transition', '');
+  // console.log( `w: ${liveWidth}; fs: ${fsFactor}; h: ${liveHeight}` );
+  heading.style.setProperty('font-size', `${fsFactor}rem`);
+  heading.style.setProperty('line-height', `${0.8*fsFactor}rem`);
+  heading.style.setProperty('letter-spacing', `${lsFactor}rem`);
+  heading.style.setProperty('transition', ``);
   // heading.style.setProperty('transition', 'font-size .1s, line-height .1s, letter-spacing .1s');
 }
 
+window.addEventListener("load", setHeadingSize, false);
+window.addEventListener("resize", setHeadingSize, false);
 /* LANDING PAGE */
 if ( document.querySelector("#landing")) {
-  window.addEventListener("load", setHeadingSize, false);
-  window.addEventListener("resize", setHeadingSize, false);
 
   let bars = document.querySelectorAll('.bar');
   for ( let i = 0; i < bars.length; i++ ) {
@@ -111,7 +116,7 @@ if ( document.querySelector("#landing")) {
     let element = document.getElementById("landing");
     element.classList.toggle('theme' + pick);
     $(".theme0").css("--circle-color","hsl(0, 0%, 10%)");
-  } 
+  };
 
   // Change the theme when circlehitbox is clicked
   $("html").on('click',"#circlehitbox",function() {
