@@ -91,10 +91,10 @@ body {
   cursor: url(./cursors/normal.svg) 2 2, auto;
 }
 blockquote, dl, dt, figcaption, address, p, pre, h1, h2, h3, h4, h5, h6 {
-  cursor: url(./cursors/text.svg) 13 26, auto;
+  cursor: url(./cursors/text.svg) 7 14, auto;
 }
 .credit {
-    cursor: url(./cursors/text.svg) 13 48, auto;
+    cursor: url(./cursors/text.svg) 7 14, auto;
 }
 .content-area{
   display: flex;
@@ -187,7 +187,7 @@ p {
 .button{
   border-radius: 20px;
   padding: 10px;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
   display: flex;
   align-items: center;
   background-color: hsla(var(--link-alpha));
@@ -196,15 +196,15 @@ p {
 .button:hover, .button:focus {
   background-color: hsla(var(--link-hover-alpha));
   transition: background-color .3s;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 a:hover, a:visited {
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 .project>.button:hover, .button:focus {
   background-color: hsla(var(--link-hover-alpha));
   transition: background-color .3s;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 .button-label{
   text-align: left;
@@ -237,7 +237,7 @@ a:hover, a:visited {
   width: 87px;
   right: 29px;
   top: 19px;
-  cursor: url(./cursors/pointer-lh.svg) 39 5, pointer;
+  cursor: url(./cursors/pointer-lh.svg) 19 3, pointer;
 }
 .bridgerlogoletters{
   fill: var(--logo-letter-color);
@@ -263,7 +263,7 @@ a:hover, a:visited {
   transition: width .25s, background-color .5s;
 }
 .bar:hover, .bar:focus {
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
   --bar-width: 125px;
   background: hsl(15, 100%, 48%);
 }
@@ -353,7 +353,7 @@ a:hover, a:visited {
 .barx:hover, .barx:focus {
   /* width: 50px; */
   stroke: hsla(0,100%,100%,100%);
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 .bararrowleft{
   fill: none;
@@ -373,7 +373,7 @@ a:hover, a:visited {
 }
 .bararrowleft:hover, .bar:focus .bararrowleft {
   margin-left: 0px;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
   background-color: hsla(20,50%,95%,20%);
 }
 /* end bar closing }}}*/
@@ -393,7 +393,7 @@ a:hover, a:visited {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  cursor: url(./cursors/pointer-lh.svg) 39 5, pointer;
+  cursor: url(./cursors/pointer-lh.svg) 19 3, pointer;
   transition: opacity .5s;
 }
 #innercircle{
@@ -422,7 +422,7 @@ a:hover, a:visited {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   transition: width .3s, height .3s, opacity .3s;
-  cursor: url(./cursors/pointer-lh.svg) 39 5, pointer;
+  cursor: url(./cursors/pointer-lh.svg) 19 3, pointer;
   opacity: 1;
   user-select: none;
 }
@@ -452,7 +452,7 @@ a:hover, a:visited {
   padding-left: 5px;
   padding-right: 3px;
   border-left: 4px solid hsl(15, 100%, 55%);
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 
 article{
@@ -677,7 +677,7 @@ address > section:first-child {
 #services-list > li {
   min-width: 330px;
   max-width: 660px;
-  cursor: url(./cursors/text.svg) 13 26, auto;
+  cursor: url(./cursors/text.svg) 7 14, auto;
 }
 @media only screen and (max-width: 812px) {
   #services-list > li {
@@ -756,7 +756,7 @@ address > section:first-child {
   padding: 0;
   background: none;
   opacity: 1;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 .first-name {
   position: absolute;
@@ -765,7 +765,7 @@ address > section:first-child {
 .team-member:hover .first-name, .team-member:focus .first-name {
   left: 1rem;
   top: 0;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 .last-name {
   position: absolute;
@@ -774,7 +774,7 @@ address > section:first-child {
 .team-member:hover .last-name, .team-member:focus .last-name {
   right: 1rem;
   top: calc(100% - 5.6rem);
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 /* end name }}} */
 
@@ -862,7 +862,7 @@ address > section:first-child {
   line-height: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  cursor: url(./cursors/text-vert.svg) 26 13, vertical-text;
+  cursor: url(./cursors/text-vert.svg) 14 7, vertical-text;
 }
 
 .case-study .intro {
@@ -895,13 +895,13 @@ margin-bottom: 2.4rem;
   top: 0;
   right: 0;
   z-index: 900;
-  cursor: url(./cursors/pointer-lh.svg) 39 5, pointer;
+  cursor: url(./cursors/pointer-lh.svg) 19 3, pointer;
 }
 
 #close-button > a {
   display: block;
   padding: 1.4rem;
-  cursor: url(./cursors/pointer-lh.svg) 39 5, pointer;
+  cursor: url(./cursors/pointer-lh.svg) 19 3, pointer;
 }
 
 #close-button svg > path {
@@ -1088,12 +1088,12 @@ h1{
 }
 
 .bar:hover{
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
   --bar-width: 105px;
 }
 
 #videobar:focus{
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
   width: 100%;
 }
 
@@ -1128,11 +1128,11 @@ h1{
 
 a:hover{
   margin-left: -5px;
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
 }
 
 #video:focus{
-  cursor: url(./cursors/pointer.svg) 5 4, pointer;
+  cursor: url(./cursors/pointer.svg) 3 3, pointer;
   --bar-width: 100%;
 }
 
